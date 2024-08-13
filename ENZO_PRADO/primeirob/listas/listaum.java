@@ -2,8 +2,6 @@ package ENZO_PRADO.primeirob.listas;
 
 import java.util.Scanner;
 
-import java.util.Scanner;
-
 public class listaum {
     private static float valorCompra = 0;
     private static float total = 0;
