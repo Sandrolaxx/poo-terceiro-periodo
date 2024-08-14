@@ -1,4 +1,4 @@
-package VICTOR_WILLIAM.primeirob.aulas.aulaDois;
+package VICTOR_WILLIAM.primeirob.aulas.aula2;
 
 public class ExemploAcesso {
     // private eh o mais restritivo, so pode ser acessado dentro da propria classe

@@ -1,4 +1,4 @@
-package VICTOR_WILLIAM.primeirob.aulas.aulaDois;
+package VICTOR_WILLIAM.primeirob.aulas.aula2;
 
 public class Vector {
     public static void main(String[] args) {
