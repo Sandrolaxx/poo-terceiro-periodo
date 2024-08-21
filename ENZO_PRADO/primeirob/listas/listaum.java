@@ -2,8 +2,6 @@ package ENZO_PRADO.primeirob.listas;
 
 import java.util.Scanner;
 
-import java.util.Scanner;
-
 public class listaum {
     private static float valorCompra = 0;
     private static float total = 0;
@@ -96,7 +94,6 @@ public class listaum {
             System.out.println("Você pagou o valor exato. Obrigado!");
         }
 
-        // Resetar valores após a compra ser finalizada
         valorCompra = 0;
         total = 0;
     }
