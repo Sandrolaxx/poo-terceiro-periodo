@@ -76,3 +76,7 @@ public class Main {
 ###### Título 6
 
 
+## Exemplo Linha Horizontal 
+---
+***
+___
