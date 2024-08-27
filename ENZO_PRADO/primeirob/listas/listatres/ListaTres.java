@@ -1,10 +1,6 @@
 package ENZO_PRADO.primeirob.listas.listatres;
 
 import java.util.Scanner;
-
-import ENZO_PRADO.primeirob.listas.listadois.Calculos;
-import ENZO_PRADO.primeirob.listas.listadois.HistoricoDeCompras;
-
 public class ListaTres {public static void main(String[] args) {
         Scanner opcao = new Scanner(System.in);
         int escolha;
