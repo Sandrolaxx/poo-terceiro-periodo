@@ -1,4 +1,4 @@
-package ENZO_PRADO.primeirob.listas;
+package ENZO_PRADO.primeirob.listas.listaum;
 
 import java.util.Scanner;
 
