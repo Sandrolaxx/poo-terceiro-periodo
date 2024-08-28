@@ -67,21 +67,25 @@ public class HistoricoDeCompras {
         switch (escolha) {
             case 1:
                 for(int i = 0; i < 12; i++) { 
+                        boolean mesvazio = true;
+
                     for(int j = 0; j < 30; j++) { 
                         if (historicodiaMes[i][j] != 0) {
+                             if(mesvazio){
+                                mesvazio = false;
+                             }
                             System.out.println("Mês: " + (i + 1)); 
                             System.out.println("Dia: " + (j + 1)); 
                             System.out.println("Total de vendas: " + historicodiaMes[i][j]);
                             System.out.println("-------------------------------");
-                        } else {
-                            System.out.println("Mês: " + (i + 1));
-                            System.out.println("Dia: " + (j + 1));
-                            System.out.println("Sem histórico de vendas do dia");
+                        } 
+                        }
+                        if(mesvazio){
+                            System.out.println("Mês " + (i + 1) + " sem histórico de compras");
                             System.out.println("-------------------------------");
                         }
                     }
-                }
-                break;
+                    break;
             case 2:
                 System.out.println("Deseja visualizar o total de qual mês? (1-12): ");
                 mes = vizualizacao.nextInt() - 1; 
