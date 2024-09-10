@@ -1,4 +1,4 @@
-package domain.entities;
+package entities;
 
 public class Client extends Person{
 
@@ -7,10 +7,11 @@ public class Client extends Person{
     }
 
     public void introduceSelf(){
-        System.out.println("Olá! Eu sou "
+        System.out.println("Olá! Eu sou cliente "
                 .concat(getName())
                 .concat(" e tenho ")
                 .concat(Integer.toString(getAge()))
+                .concat(" anos.")
         );
     }
 }

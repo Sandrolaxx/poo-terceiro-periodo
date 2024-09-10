@@ -1,4 +1,4 @@
-package domain.entities;
+package entities;
 
 public class Address {
     private String street;
