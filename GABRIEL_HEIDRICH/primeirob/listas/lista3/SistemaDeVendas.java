@@ -1,16 +1,16 @@
+package lista3;
 import java.util.Scanner;
 
 class Venda {
-    private static final int MESES = 12;      // 12 meses
-    private static final int DIAS_POR_MES = 30; // 30 dias em cada mês (todos os meses com 30 dias no cenário)
+    private static final int MESES = 12;    
+    private static final int DIAS_POR_MES = 30; 
     
-    private int[][] vendas; // Armazena as vendas diárias [meses][dias]
+    private int[][] vendas; 
 
     public Venda() {
-        vendas = new int[MESES][DIAS_POR_MES]; // Inicializa o array de vendas
+        vendas = new int[MESES][DIAS_POR_MES]; 
     }
 
-    // Método para registrar a venda de um dia específico
     public void registrarVenda(int mes, int dia, int quantidade) {
         if (validarMesEDia(mes, dia)) {
             vendas[mes - 1][dia - 1] = quantidade;
@@ -20,7 +20,6 @@ class Venda {
         }
     }
 
-    // Método para consultar a venda de um dia específico
     public void consultarVendaDia(int mes, int dia) {
         if (validarMesEDia(mes, dia)) {
             int quantidadeVendas = vendas[mes - 1][dia - 1];
@@ -30,7 +29,6 @@ class Venda {
         }
     }
 
-    // Método para consultar o total de vendas de um mês
     public void consultarVendaMes(int mes) {
         if (mes >= 1 && mes <= 12) {
             int totalVendas = 0;
@@ -43,7 +41,6 @@ class Venda {
         }
     }
 
-    // Método para validar o mês e o dia informados
     private boolean validarMesEDia(int mes, int dia) {
         return (mes >= 1 && mes <= 12) && (dia >= 1 && dia <= 30);
     }
@@ -80,7 +77,6 @@ public class SistemaDeVendas {
         scanner.close();
     }
 
-    // Exibe o menu de opções para o usuário
     private static void exibirMenu() {
         System.out.println("\n===== Sistema de Vendas =====");
         System.out.println("1. Registrar venda do dia");
@@ -90,7 +86,6 @@ public class SistemaDeVendas {
         System.out.print("Escolha uma opção: ");
     }
 
-    // Função para registrar vendas
     private static void registrarVenda(Scanner scanner, Venda venda) {
         System.out.print("Digite o mês (1-12): ");
         int mes = scanner.nextInt();
@@ -104,7 +99,6 @@ public class SistemaDeVendas {
         venda.registrarVenda(mes, dia, quantidadeVendas);
     }
 
-    // Função para consultar vendas de um dia específico
     private static void consultarVendaDia(Scanner scanner, Venda venda) {
         System.out.print("Digite o mês (1-12): ");
         int mes = scanner.nextInt();
@@ -115,7 +109,6 @@ public class SistemaDeVendas {
         venda.consultarVendaDia(mes, dia);
     }
 
-    // Função para consultar o total de vendas de um mês
     private static void consultarVendaMes(Scanner scanner, Venda venda) {
         System.out.print("Digite o mês (1-12): ");
         int mes = scanner.nextInt();
