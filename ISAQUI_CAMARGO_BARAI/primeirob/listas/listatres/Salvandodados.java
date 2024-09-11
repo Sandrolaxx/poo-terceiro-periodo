@@ -1,4 +1,4 @@
-package ISAQUI_CAMARGO_BARAI.primeirob.aulas.listas.listatres;
+package ISAQUI_CAMARGO_BARAI.primeirob.listas.listatres;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package ISAQUI_CAMARGO_BARAI.primeirob.aulas.listas.listadois;
+package ISAQUI_CAMARGO_BARAI.primeirob.listas.listadois;
 
 import java.util.ArrayList;
 import java.util.List;
