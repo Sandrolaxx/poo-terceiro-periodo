@@ -7,8 +7,6 @@ public class App {
     static double valorInseridoPeloUsuario = 0;
     
     public static void main(String[] args) throws Exception {
-        
-        
         List<Produto> listaDeProdutos = new LinkedList<>();
         int menu;
 
