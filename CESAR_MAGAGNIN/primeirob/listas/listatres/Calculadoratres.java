@@ -1,18 +1,18 @@
-package CESAR_MAGAGNIN.primeirob.listas.listatres;
+//package CESAR_MAGAGNIN.primeirob.listas.listatres;
 import java.io.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
-import java.util.stream.Collectors;
+//import java.util.stream.Collectors;
 
-public class Calculadora {
+public class Calculadoratres {
     private final Scanner scanner;
     private final List<Venda> vendas;
     private final String arquivo;
     private int proximaOrdem;
     private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
-    public Calculadora() {
+    public Calculadoratres() {
         this.scanner = new Scanner(System.in);
         this.vendas = new ArrayList<>();
         this.arquivo = "vendas.csv";
@@ -21,7 +21,7 @@ public class Calculadora {
     }
 
     public static void main(String[] args) {
-        new Calculadora().executar();
+        new Calculadoratres().executar();
     }
 
     private void executar() {
