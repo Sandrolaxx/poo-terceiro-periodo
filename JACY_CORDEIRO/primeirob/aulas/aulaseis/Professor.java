@@ -1,4 +1,4 @@
-package JACY_CORDEIRO.primeirob.aulas.aulacinco;
+package JACY_CORDEIRO.primeirob.aulas.aulaseis;
 
 public class Professor {
     private String nome;

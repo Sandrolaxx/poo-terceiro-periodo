@@ -1,5 +1,7 @@
 package JACY_CORDEIRO.primeirob.aulas.aulacinco;
 
+import JACY_CORDEIRO.primeirob.aulas.aulaseis.Ninja;
+
 public class NinjaTeste {
     public static void main(String[] args) {
         // Criando uma instância para o primeiro ninja

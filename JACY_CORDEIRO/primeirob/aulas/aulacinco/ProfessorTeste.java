@@ -1,5 +1,7 @@
 package JACY_CORDEIRO.primeirob.aulas.aulacinco;
 
+import JACY_CORDEIRO.primeirob.aulas.aulaseis.Professor;
+
 public class ProfessorTeste {
     public static void main(String[] args) {
         // Criando uma instância para Professor Sandro
