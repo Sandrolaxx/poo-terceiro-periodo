@@ -1,6 +1,6 @@
 package DIONATAN_DARIZ.primeirob.listas.listaseis;
 
-import java.util.ArrayList;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Pedido {
@@ -11,55 +11,101 @@ public class Pedido {
     private Cliente cliente;
     private Vendedor vendedor;
     private Loja loja;
-    private ArrayList<Item> itens;
+    private Item[] itens;
 
-    public Pedido(int id, Date dataCriacao, Cliente cliente, Vendedor vendedor, Loja loja, ArrayList<Item> itens, Date dataVencimentoReserva) {
+    // Construtor da classe Pedido
+    public Pedido(int id, Date dataCriacao, Date dataPagamento, Date dataVencimentoReserva,
+                  Cliente cliente, Vendedor vendedor, Loja loja, Item[] itens) {
         this.id = id;
         this.dataCriacao = dataCriacao;
+        this.dataPagamento = dataPagamento;
+        this.dataVencimentoReserva = dataVencimentoReserva;
         this.cliente = cliente;
         this.vendedor = vendedor;
         this.loja = loja;
         this.itens = itens;
-        this.dataVencimentoReserva = dataVencimentoReserva;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public Date getDataCriacao() {
-        return dataCriacao;
-    }
-
-    public Date getDataVencimentoReserva() {
-        return dataVencimentoReserva;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public Vendedor getVendedor() {
-        return vendedor;
-    }
-
-    public Loja getLoja() {
-        return loja;
-    }
-
-    public ArrayList<Item> getItens() {
-        return itens;
-    }
-
+    // Método para calcular o valor total do pedido
     public double calcularValorTotal() {
-        double total = 0;
+        double total = 0.0;
         for (Item item : itens) {
             total += item.getValor();
         }
         return total;
     }
 
-    public void gerarDescricaoVenda() {
-        System.out.println("Data de Criação: " + dataCriacao + ", Valor Total: " + calcularValorTotal());
+    // Método para gerar a descrição da venda
+    public String gerarDescricaoVenda() {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        String descricao = "Pedido ID: " + id +
+                           "\nData de Criação: " + formatter.format(dataCriacao) +
+                           "\nValor Total: " + calcularValorTotal();
+        return descricao;
+    }
+
+    // Getters e Setters (se necessário)
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Date getDataCriacao() {
+        return dataCriacao;
+    }
+
+    public void setDataCriacao(Date dataCriacao) {
+        this.dataCriacao = dataCriacao;
+    }
+
+    public Date getDataPagamento() {
+        return dataPagamento;
+    }
+
+    public void setDataPagamento(Date dataPagamento) {
+        this.dataPagamento = dataPagamento;
+    }
+
+    public Date getDataVencimentoReserva() {
+        return dataVencimentoReserva;
+    }
+
+    public void setDataVencimentoReserva(Date dataVencimentoReserva) {
+        this.dataVencimentoReserva = dataVencimentoReserva;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public Vendedor getVendedor() {
+        return vendedor;
+    }
+
+    public void setVendedor(Vendedor vendedor) {
+        this.vendedor = vendedor;
+    }
+
+    public Loja getLoja() {
+        return loja;
+    }
+
+    public void setLoja(Loja loja) {
+        this.loja = loja;
+    }
+
+    public Item[] getItens() {
+        return itens;
+    }
+
+    public void setItens(Item[] itens) {
+        this.itens = itens;
     }
 }

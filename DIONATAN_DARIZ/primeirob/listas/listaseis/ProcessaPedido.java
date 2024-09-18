@@ -4,21 +4,32 @@ import java.util.Date;
 
 public class ProcessaPedido {
 
-    public void processar(Pedido pedido) {
-        System.out.println("Pedido processado com sucesso!");
-        pedido.gerarDescricaoVenda();
+    // Método para processar o pedido, recebendo os dados necessários para criação
+    public Pedido processar(int id, Date dataCriacao, Date dataPagamento, Date dataVencimentoReserva,
+                            Cliente cliente, Vendedor vendedor, Loja loja, Item[] itens) {
+        Pedido novoPedido = new Pedido(id, dataCriacao, dataPagamento, dataVencimentoReserva, cliente, vendedor, loja, itens);
+        System.out.println("Pedido criado com sucesso!");
+        return novoPedido;
     }
 
-    public void confirmarPagamento(Pedido pedido) {
+    // Método para confirmar o pagamento, verificando se a reserva não está vencida
+    public boolean confirmarPagamento(Pedido pedido) {
         if (verificarValidadeReserva(pedido)) {
-            System.out.println("Pagamento confirmado!");
+            System.out.println("Pagamento confirmado para o pedido ID: " + pedido.getId());
+            return true;
         } else {
-            System.out.println("Reserva vencida. Não é possível confirmar o pagamento.");
+            System.out.println("Não foi possível confirmar o pagamento. A reserva está vencida.");
+            return false;
         }
     }
 
+    // Método privado para verificar se a reserva do pedido está válida (não vencida)
     private boolean verificarValidadeReserva(Pedido pedido) {
-        Date hoje = new Date();
-        return hoje.before(pedido.getDataVencimentoReserva());
+        Date dataAtual = new Date();
+        if (dataAtual.before(pedido.getDataVencimentoReserva())) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

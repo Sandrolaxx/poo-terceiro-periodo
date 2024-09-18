@@ -19,5 +19,4 @@ public class Cliente {
         return nome;
     }
 
-    // Outros métodos, se houver
 }

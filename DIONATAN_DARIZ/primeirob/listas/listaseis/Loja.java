@@ -2,22 +2,21 @@ package DIONATAN_DARIZ.primeirob.listas.listaseis;
 
 public class Loja {
     private String nome;
-    private String nomeFantasia;
-    private String cnpj;
-    private Endereco endereco;
 
-    public Loja(String nome, String nomeFantasia, String cnpj, Endereco endereco) {
+    // Construtor da classe Loja
+    public Loja(String nome) {
         this.nome = nome;
-        this.nomeFantasia = nomeFantasia;
-        this.cnpj = cnpj;
-        this.endereco = endereco;
     }
 
-    public String getNomeFantasia() {
-        return nomeFantasia;
+    // Getter para nome
+    public String getNome() {
+        return nome;
     }
 
-    public Endereco getEndereco() {
-        return endereco;
+    // Setter para nome, caso necessário
+    public void setNome(String nome) {
+        this.nome = nome;
     }
+
+    // Outros métodos, se necessário
 }

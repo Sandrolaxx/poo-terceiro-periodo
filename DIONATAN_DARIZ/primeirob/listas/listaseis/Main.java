@@ -1,72 +1,94 @@
 package DIONATAN_DARIZ.primeirob.listas.listaseis;
 
-import java.util.ArrayList;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
-    private static Pedido ultimoPedido;
+
+    private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        ProcessaPedido processaPedido = new ProcessaPedido();
 
-        Endereco enderecoLoja = new Endereco("SP", "São Paulo", "Centro", 100, "Sala 1");
-        Loja loja = new Loja("Myy Plant", "Exóticas Ltda", "12345678901234", enderecoLoja);
-        Vendedor vendedor = new Vendedor("Carlos", 30, loja);
-        Cliente cliente = new Cliente("Ana", 45, "São Paulo", "Vila Madalena", "Rua das Flores");
+        Loja loja = new Loja("Flor do Campo");
+        Vendedor vendedor = new Vendedor("Maria", 28, loja);
+        Cliente cliente = new Cliente("João", 30, "Rua das Flores", "Jardim", "São Paulo");
+        Item item1 = new Item(101, "Vaso de Cerâmica", "Decoração", 59.99);
+        Item item2 = new Item(102, "Planta Exótica", "Jardim", 120.50);
+        Item[] itens = {item1, item2};
 
-        ArrayList<Item> itens = new ArrayList<>();
-        itens.add(new Item(1, "Orquídea", "Flor", 50.00));
-        itens.add(new Item(2, "Samambaia", "Folhagem", 30.00));
+        boolean executando = true;
+        Pedido novoPedido = null;
 
-        ProcessaPedido processador = new ProcessaPedido();
-
-        while (true) {
-            System.out.println("----- Menu -----");
-            System.out.println("[1] - Criar Pedido");
-            System.out.println("[2] - Confirmar Pagamento");
-            System.out.println("[3] - Ver Detalhes do Pedido");
-            System.out.println("[4] - Sair");
+        while (executando) {
+            System.out.println("\nMENU:");
+            System.out.println("1. Criar Pedido");
+            System.out.println("2. Confirmar Pagamento do Pedido");
+            System.out.println("3. Sair");
+            System.out.print("Escolha uma opção: ");
             int opcao = scanner.nextInt();
+            scanner.nextLine();
 
             switch (opcao) {
                 case 1:
-                    Pedido pedido = new Pedido(1, new Date(), cliente, vendedor, loja, itens, new Date(System.currentTimeMillis() + 86400000));  // 1 dia para vencer
-                    processador.processar(pedido);
-                    ultimoPedido = pedido;
+
+                    System.out.println("Digite o ID do pedido: ");
+                    int idPedido = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.println("Informe a data de criação do pedido (formato: dd/MM/yyyy): ");
+                    String dataCriacaoStr = scanner.nextLine();
+                    Date dataCriacao = parseDate(dataCriacaoStr);
+
+                    System.out.println("Informe a data de pagamento do pedido (formato: dd/MM/yyyy): ");
+                    String dataPagamentoStr = scanner.nextLine();
+                    Date dataPagamento = parseDate(dataPagamentoStr);
+
+                    System.out.println("Informe a data de vencimento da reserva (formato: dd/MM/yyyy): ");
+                    String dataVencimentoStr = scanner.nextLine();
+                    Date dataVencimentoReserva = parseDate(dataVencimentoStr);
+
+                    novoPedido = processaPedido.processar(idPedido, dataCriacao, dataPagamento, dataVencimentoReserva, cliente, vendedor, loja, itens);
+                    System.out.println("Pedido criado com sucesso!\n");
+                    novoPedido.gerarDescricaoVenda();
                     break;
+
                 case 2:
-                    if (ultimoPedido != null) {
-                        processador.confirmarPagamento(ultimoPedido);
-                    } else {
-                        System.out.println("Nenhum pedido foi criado ainda.");
-                    }
-                    break;
-                case 3:
-                    if (ultimoPedido != null) {
-                        System.out.println("----- Detalhes do Pedido -----");
-                        System.out.println("ID do Pedido: " + ultimoPedido.getId());
-                        System.out.println("Data de Criação: " + ultimoPedido.getDataCriacao());
-                        System.out.println("Cliente: " + ultimoPedido.getCliente().getNome());
-                        System.out.println("Vendedor: " + ultimoPedido.getVendedor().getNome());
-                        System.out.println("Loja: " + ultimoPedido.getLoja().getNomeFantasia());
-                        System.out.println("Itens:");
-                        for (Item item : ultimoPedido.getItens()) {
-                            item.gerarDescricao();
+                    if (novoPedido != null) {
+                      
+                        System.out.println("Confirmando pagamento do pedido...");
+                        boolean sucesso = processaPedido.confirmarPagamento(novoPedido);
+                        if (sucesso) {
+                            System.out.println("Pagamento confirmado.");
+                        } else {
+                            System.out.println("Pagamento não confirmado. A reserva está vencida.");
                         }
-                        System.out.println("Data de Vencimento da Reserva: " + ultimoPedido.getDataVencimentoReserva());
-                        System.out.println("Valor Total: " + ultimoPedido.calcularValorTotal());
                     } else {
-                        System.out.println("Nenhum pedido foi criado ainda.");
+                        System.out.println("Nenhum pedido criado para confirmar o pagamento.");
                     }
                     break;
-                case 4:
-                    System.out.println("Saindo...");
-                    scanner.close();
-                    return;
+
+                case 3:
+                    executando = false;
+                    System.out.println("Saindo do sistema...");
+                    break;
+
                 default:
-                    System.out.println("Opção inválida.");
+                    System.out.println("Opção inválida, tente novamente.");
             }
+        }
+        scanner.close();
+    }
+
+    private static Date parseDate(String dateStr) {
+        try {
+            return DATE_FORMAT.parse(dateStr);
+        } catch (ParseException e) {
+            System.out.println("Erro ao converter a data. Usando a data atual.");
+            return new Date();
         }
     }
 }
