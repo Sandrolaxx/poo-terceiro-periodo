@@ -59,8 +59,7 @@ public class Calculatortres {
                         valorTotal -= desconto;
                     }
 
-                    System.out.println("O valor total com desconto é: " + valorTotal +
-                                       " (Desconto: " + desconto + ")");
+                    System.out.println("O valor total com desconto é: " + valorTotal + " (Desconto: " + desconto + ")");
 
                     System.out.println("Digite o dia da venda:");
                     int dia = scan.nextInt();
