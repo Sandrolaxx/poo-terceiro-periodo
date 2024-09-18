@@ -4,19 +4,15 @@ public class Gerente {
    public int nome;
    public int idade;
    public String Loja;
-   public String cidade;
-   public String bairro;
-   public String rua;
+   public Endereco endereco;
    public int salarioBase;
    public int[] salarioRecebido;
 
-   public Gerente(int nome, int idade, String loja, String cidade, String bairro, String rua, int salarioBase,int[] salarioRecebido) {
+   public Gerente(int nome, int idade, String loja, Endereco endereco,int salarioBase,int[] salarioRecebido) {
     this.nome = nome;
     this.idade = idade;
     this.Loja = loja;
-    this.cidade = cidade;
-    this.bairro = bairro;
-    this.rua = rua;
+    this.endereco = endereco;
     this.salarioBase = salarioBase;
     this.salarioRecebido = salarioRecebido;
 }
