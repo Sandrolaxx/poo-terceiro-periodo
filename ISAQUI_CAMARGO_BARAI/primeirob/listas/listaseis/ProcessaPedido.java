@@ -5,14 +5,12 @@ import java.util.ArrayList;
 
 class ProcessaPedido {
 
-    // Método para processar o pedido
     Pedido processar(int id, Date dataCriacao, Date dataVencimentoReserva, String cliente, String vendedor, String loja, ArrayList<Item> itens) {
         Pedido pedido = new Pedido(id, dataCriacao, dataVencimentoReserva, cliente, vendedor, loja);
         pedido.itens = itens;
         return pedido;
     }
 
-    // Método para confirmar o pagamento
     boolean confirmarPagamento(Pedido pedido) {
         Date dataAtual = new Date();
         if(verificarValidadeReserva(pedido.dataVencimentoReserva, dataAtual)) {
@@ -25,7 +23,6 @@ class ProcessaPedido {
         }
     }
 
-    // Método privado para verificar validade da reserva
     private boolean verificarValidadeReserva(Date dataVencimentoReserva, Date dataAtual) {
         return dataAtual.before(dataVencimentoReserva);
     }

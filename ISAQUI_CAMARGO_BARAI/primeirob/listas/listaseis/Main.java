@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Exemplo de uso
+
         Endereco endereco = new Endereco("SP", "São Paulo", "Centro", "Rua A", 123, "Apto 1");
         Gerente gerente = new Gerente("Carlos", 45, "Loja A", endereco, 5000.0);
 

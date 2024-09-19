@@ -13,7 +13,6 @@ class Pedido {
     String loja;
     ArrayList<Item> itens = new ArrayList<>();
 
-    // Construtor
     Pedido(int id, Date dataCriacao, Date dataVencimentoReserva, String cliente, String vendedor, String loja) {
         this.id = id;
         this.dataCriacao = dataCriacao;
@@ -23,7 +22,6 @@ class Pedido {
         this.loja = loja;
     }
 
-    // Método para calcular o valor total do pedido
     double calcularValorTotal() {
         double total = 0;
         for(Item item : itens) {
