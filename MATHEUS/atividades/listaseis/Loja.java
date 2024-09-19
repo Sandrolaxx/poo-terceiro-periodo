@@ -16,6 +16,6 @@ class Loja {
 
     public void apresentarse(){
         System.out.println("Nome Fantasia: " + nomeFantasia + "\nRaz" + razaoSocial + "\nCNPJ: " + cnpj);
-        this.endereco.apresentarse();
+        this.endereco.apresentarLogradouro();
     }
 }

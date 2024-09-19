@@ -17,7 +17,7 @@ public class Vendedor {
 
     public void apresentarse(){
         System.out.println("Nome:" + nome + "\nidade:" + idade);
-        enderco.apresentarse();
+        enderco.apresentarLogradouro();
         if (this.loja != null){    
             this.loja.apresentarse();
         }

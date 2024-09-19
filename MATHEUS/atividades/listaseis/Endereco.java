@@ -16,7 +16,7 @@ public class Endereco{
       this.rua = rua;
     }
     public void apresentarLogradouro(){
-      String Formated = String.format("Rua: %s, %s - [%s]\n  Bairro [%S]\n %s - [%s] [%s \n%s", rua, numero, complemento, bairro, cidade, pais);
+      String Formated = String.format("Rua: %S, %S - %S\nBairro: %S\n%S - %S", rua, numero, complemento, bairro, cidade, pais);
       System.out.println(Formated);
     }    
 }

@@ -1,4 +1,3 @@
-import java.security.PublicKey;
 import java.util.Date;
 
 public class Pedido {
@@ -11,11 +10,10 @@ public class Pedido {
     public Loja loja;
     public Item[] itens;
 
-    public Pedido(int id, Date dataCriacao, Date dataPagamento, Date dataVencimentoReserva,
+    public Pedido(int id, Date dataCriacao, Date dataVencimentoReserva,
                   Cliente cliente, Vendedor vendedor, Loja loja, Item[] itens) {
         this.id = id;
         this.dataCriacao = dataCriacao;
-        this.dataPagamento = dataPagamento;
         this.dataVencimentoReserva = dataVencimentoReserva;
         this.cliente = cliente;
         this.vendedor = vendedor;
@@ -30,6 +28,7 @@ public class Pedido {
         }
         return valorTotal;
     }
-
-
+    public void geraDescricaoVenda() {
+        System.out.println("Id do pedido: "+ id +"\nData de criação do peidio: " + Uteis.dataFormatada(dataCriacao) + "\nvalor total: " + calcularValorTotal());
+    }
 }

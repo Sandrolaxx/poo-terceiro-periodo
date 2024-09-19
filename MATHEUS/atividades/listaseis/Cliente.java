@@ -11,6 +11,6 @@ public class Cliente{
 
   public void Apresentarse(){
     System.out.println("Nome: " + nome + "\nIdade: " + idade);
-    this.endereco.apresentarse();
+    this.endereco.apresentarLogradouro();
   }
 }
