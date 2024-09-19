@@ -78,7 +78,8 @@ public class TestObjects {
 
         return shopOne;
     }
-
+    
+    @SuppressWarnings("unused")
     public static void main(String[] args) {
         clearConsole();
 
