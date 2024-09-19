@@ -1,6 +1,5 @@
 package EDILSON_ALVES.primeirob.listas.listacinco;
 
-import EDILSON_ALVES.primeirob.listas.listacinco.Vendedor;
 
 public class TestObjects {
 

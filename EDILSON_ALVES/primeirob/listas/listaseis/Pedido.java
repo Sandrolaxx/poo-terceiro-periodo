@@ -1,24 +1,29 @@
 package EDILSON_ALVES.primeirob.listas.listaseis;
 
+import java.util.Date;
 
 public class Pedido{
     public int id;
-    public int dataCriacao;
-    public int dataVencimentoReserva;
-    public int dataPagamento;
+    public Date dataCriacao;
+    public Date dataPagamento;
+    public Date dataVencimentoReserva;
     public String cliente;
     public String vendedor;
-    public String Loja; 
-    public Item[] itens;
-
-    public Pedido(Item[] itens){
-        this.itens = itens;
-    }
+    public String Loja;    
+    public Item[] itens;                                                                                                    
+    
+    
     public void imprime(){
-        System.out.println(this.itens);
+        System.out.println("data de vencimento "+this.getDataVencimento());
+        System.out.println("data da criação "+ this.getDataCriacao());
+        System.out.println("data de pagamento "+ this.getDatapagamento());
+        System.out.println("id "+this.getId());
+        System.out.println("cliente "+ this.getCliente());
+        System.out.println("vendedor "+this.getVendedor());
+        System.out.println("nome da loja "+this.getLoja());
     }
-
-    public Pedido(int id, int dataCriacao, int dataPagamento, int dataVencimentoReserva, String cliente,String vendedor, String loja, Item[] itens) {
+    
+    public Pedido(int id, Date dataCriacao, Date dataPagamento, Date dataVencimentoReserva, String cliente,String vendedor, String loja, Item[] itens) {
         this.id = id;
         this.dataCriacao = dataCriacao;
         this.dataPagamento = dataPagamento;
@@ -28,11 +33,38 @@ public class Pedido{
         this.Loja = loja;
         this.itens = itens;
     }
-    public double calcularValorTotal(){
+    public int getId() {
+        return id;
+    }
+
+    public String getCliente() {
+        return cliente;
+    }
+
+    public String getVendedor() {
+        return vendedor;
+    }
+
+    public String getLoja() {
+        return Loja;
+    }
+    public Date getDatapagamento(){
+        return dataPagamento;
+    }
+
+    public Date getDataCriacao(){
+        return dataCriacao;
+    }
+
+    public Date getDataVencimento(){
+        return dataVencimentoReserva;
+    }
+
+    public double calcularValorTotal(Item[] item){
         double soma = 0.0;
 
-        for (Item item : itens) {
-           soma += item.getValor();
+        for (Item itemm : itens) {
+           soma += itemm.getValor();
         }
 
         return soma;

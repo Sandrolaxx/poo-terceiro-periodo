@@ -4,11 +4,17 @@ public class Gerente {
    public int nome;
    public int idade;
    public String Loja;
-   public Endereco endereco;
+   public Endereco cidade;
+   public String bairro;
+   public String rua;
    public int salarioBase;
    public int[] salarioRecebido;
 
-   public Gerente(int nome, int idade, String loja, Endereco endereco,int salarioBase,int[] salarioRecebido) {
+   public void imprime(){
+      System.out.println("cidade "+ this.getCidade());
+   }
+
+   public Gerente(int nome, int idade, String loja, Endereco cidade, String bairro, String rua, int salarioBase,int[] salarioRecebido) {
     this.nome = nome;
     this.idade = idade;
     this.Loja = loja;
@@ -16,6 +22,10 @@ public class Gerente {
     this.salarioBase = salarioBase;
     this.salarioRecebido = salarioRecebido;
 }
+
+   public Endereco getCidade(){
+      return cidade;
+   }
 
    public void apresentar(){
 

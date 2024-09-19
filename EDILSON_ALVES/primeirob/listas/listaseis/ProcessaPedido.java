@@ -1,20 +1,46 @@
 package EDILSON_ALVES.primeirob.listas.listaseis;
 
+import java.util.Date;
+
 public class ProcessaPedido {
+   
+    long diaEmMs = 86400000l;
+    long diaEmMss = 86400000l - (86400000l*3);
+    long diaEmMsss = 86400000l - (86400000l*2);
+
+    Date dateTeste = new Date(diaEmMs);
+    Date agora = new Date();
+
+    Date tresdois = new Date(agora.getTime()+(diaEmMsss));
+    Date tresdias = new Date(agora.getTime()+(diaEmMs*3));
+    Date tresmenos = new Date(agora.getTime()+(diaEmMss));
 
 
-    public Pedido processar(){
-        Item item1 = new Item(15, "caneta", "inteiro", 15);
-        Item item2 = new Item(20, "lapis", "fisico", 20);
-        Item item3 = new Item(15, "borracha", "siringueira", 25);
-        Item[] items = {item1,item2,item3};
 
-        Pedido pedido = new Pedido(items);
+    public void processar(){
+        Item item = new Item(16, "TOP", "LEGAL", 15);
+       
+        Item[] items = {item};
 
-        for (Item item : items) {
-           item.pedido.imprime();
-        }
+        Pedido pedido = new Pedido(15, tresmenos,tresdois,tresdias,"Edilson","alves","lojinhatopzera",items);
 
-        return pedido;
+            pedido.imprime();
     }
+
+
+    
+
+    public void confirmarPagamento(){
+
+    }
+
 }
+
+
+/*
+        long diaEmMs = 86400000l;
+        Date dateTeste = new Date(diaEmMs);
+        Date agora = new Date();
+        Date amanha = new Date(agora.getTime()+diaEmMs);
+        Date daquitres = new Date(agora.getTime()+(diaEmMs*4 ));
+*/ 
