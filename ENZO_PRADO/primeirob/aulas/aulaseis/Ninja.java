@@ -1,6 +1,6 @@
 package ENZO_PRADO.primeirob.aulas.aulaseis;
 
-public class Ninja {
+public abstract class Ninja {
 
     String nome;
     int idade;
