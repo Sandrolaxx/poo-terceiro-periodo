@@ -2,8 +2,6 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
-// Classe Venda para armazenar os dados de cada venda
 class Venda {
     private final int ordem;
     private final int quantidade;

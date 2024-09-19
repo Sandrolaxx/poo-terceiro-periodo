@@ -1,4 +1,3 @@
-//package CESAR_MAGAGNIN.primeirob.listas.listatres;
 import java.io.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
