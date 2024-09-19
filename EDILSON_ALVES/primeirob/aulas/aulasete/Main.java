@@ -17,6 +17,6 @@ public class Main {
       //  Ninja ninja = new Ninja();
 
         AlunoNinja.apresentarse();
-        ninja.apresentarse();
+      //  ninja.apresentarse();
     }
 }
