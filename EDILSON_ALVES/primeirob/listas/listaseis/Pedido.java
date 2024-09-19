@@ -10,7 +10,8 @@ public class Pedido{
     public String cliente;
     public String vendedor;
     public String Loja;    
-    public Item[] itens;                                                                                                    
+    public Item[] itens;   
+    public double soma = 0.0;                                                                                                 
     
     
     public void imprime(){
@@ -21,6 +22,8 @@ public class Pedido{
         System.out.println("cliente "+ this.getCliente());
         System.out.println("vendedor "+this.getVendedor());
         System.out.println("nome da loja "+this.getLoja());
+        System.out.println("valor do produto: "+calcularValorTotal(itens));
+        System.out.println();
     }
     
     public Pedido(int id, Date dataCriacao, Date dataPagamento, Date dataVencimentoReserva, String cliente,String vendedor, String loja, Item[] itens) {
@@ -61,7 +64,6 @@ public class Pedido{
     }
 
     public double calcularValorTotal(Item[] item){
-        double soma = 0.0;
 
         for (Item itemm : itens) {
            soma += itemm.getValor();

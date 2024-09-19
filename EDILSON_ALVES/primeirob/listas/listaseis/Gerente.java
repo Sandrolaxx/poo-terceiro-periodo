@@ -1,20 +1,14 @@
 package EDILSON_ALVES.primeirob.listas.listaseis;
 
 public class Gerente {
-   public int nome;
+   public String nome;
    public int idade;
    public String Loja;
-   public Endereco cidade;
-   public String bairro;
-   public String rua;
+   public Endereco endereco;
    public int salarioBase;
    public int[] salarioRecebido;
-
-   public void imprime(){
-      System.out.println("cidade "+ this.getCidade());
-   }
-
-   public Gerente(int nome, int idade, String loja, Endereco cidade, String bairro, String rua, int salarioBase,int[] salarioRecebido) {
+   
+   public Gerente(String nome, int idade, String loja, Endereco endereco, int salarioBase ,int[] salarioRecebido ) {
     this.nome = nome;
     this.idade = idade;
     this.Loja = loja;
@@ -22,9 +16,38 @@ public class Gerente {
     this.salarioBase = salarioBase;
     this.salarioRecebido = salarioRecebido;
 }
+   public void imprime(){
+      endereco.apresentaEndereco();
+      System.out.println("nome "+ this.getNome());
+      System.out.println("idade "+ this.getIdade());
+      System.out.println("loja "+ this.getLoja());
+      System.out.println("salario base "+ this.getSalarioBase());
 
-   public Endereco getCidade(){
-      return cidade;
+      for(int salarioo : salarioRecebido){
+         System.out.println("salario recebido "+ salarioo);
+      }
+   }
+
+
+   public int getIdade() {
+      return idade;
+   }
+   public String getLoja() {
+      return Loja;
+   }
+   public int getSalarioBase() {
+      return salarioBase;
+   }
+   public int[] getSalarioRecebido() {
+      return salarioRecebido;
+   }
+   public String getNome() {
+      return nome;
+   }
+
+   public Endereco getEndereco(){
+ 
+      return endereco;
    }
 
    public void apresentar(){

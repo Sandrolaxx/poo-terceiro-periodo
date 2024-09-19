@@ -18,19 +18,22 @@ public class ProcessaPedido {
 
 
     public void processar(){
-        Item item = new Item(16, "TOP", "LEGAL", 15);
+
+        Item item = new Item(16, "caneta", "bic", 15);
        
         Item[] items = {item};
 
         Pedido pedido = new Pedido(15, tresmenos,tresdois,tresdias,"Edilson","alves","lojinhatopzera",items);
 
             pedido.imprime();
+            confirmarPagamento();
     }
 
 
     
 
     public void confirmarPagamento(){
+        System.out.println("pagamento confirmado ");
 
     }
 

@@ -18,7 +18,7 @@ public class Item {
     }
 
     public void gerarDescricao(){
-
+        System.out.println("peofuto para escrever");
 
     }
 
