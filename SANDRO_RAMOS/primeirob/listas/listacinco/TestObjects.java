@@ -10,19 +10,13 @@ public class TestObjects {
     }
 
     public static Vendedor vendedorPadraoUm() {
-        Vendedor vendedor = new Vendedor();
-
-        vendedor.nome = "Sandrolax";
-        vendedor.idade = 20;
+        Vendedor vendedor = new Vendedor("Sandrolax", 20);
 
         return vendedor;
     }
 
     public static Vendedor vendedorPadraoDois() {
-        Vendedor vendedor = new Vendedor();
-
-        vendedor.nome = "Roberto";
-        vendedor.idade = 49;
+        Vendedor vendedor = new Vendedor("Roberto", 49);
 
         return vendedor;
     }
