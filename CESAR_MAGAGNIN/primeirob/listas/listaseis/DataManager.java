@@ -1,5 +1,4 @@
 package CESAR_MAGAGNIN.primeirob.listas.listaseis;
-// DataManager.java
 
 import java.io.*;
 import java.util.ArrayList;
@@ -31,16 +30,16 @@ public class DataManager {
         }
     }
 
-    // Método para salvar clientes
-    public static void salvarClientes(List<Cliente> clientes, String fileName) throws IOException {
+    // Método para salvar pessoas (Clientes e Funcionários)
+    public static void salvarPessoas(List<Pessoa> pessoas, String fileName) throws IOException {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileName))) {
-            oos.writeObject(clientes);
+            oos.writeObject(pessoas);
         }
     }
 
-    // Método para carregar clientes
+    // Método para carregar pessoas
     @SuppressWarnings("unchecked")
-    public static List<Cliente> carregarClientes(String fileName) throws IOException, ClassNotFoundException {
+    public static List<Pessoa> carregarPessoas(String fileName) throws IOException, ClassNotFoundException {
         File file = new File(fileName);
         if (!file.exists()) {
             return new ArrayList<>();
@@ -48,31 +47,7 @@ public class DataManager {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
             Object obj = ois.readObject();
             if (obj instanceof List<?>) {
-                return (List<Cliente>) obj;
-            } else {
-                throw new ClassNotFoundException("Dados incompatíveis no arquivo: " + fileName);
-            }
-        }
-    }
-
-    // Método para salvar funcionários
-    public static void salvarFuncionarios(List<Funcionario> funcionarios, String fileName) throws IOException {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileName))) {
-            oos.writeObject(funcionarios);
-        }
-    }
-
-    // Método para carregar funcionários
-    @SuppressWarnings("unchecked")
-    public static List<Funcionario> carregarFuncionarios(String fileName) throws IOException, ClassNotFoundException {
-        File file = new File(fileName);
-        if (!file.exists()) {
-            return new ArrayList<>();
-        }
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
-            Object obj = ois.readObject();
-            if (obj instanceof List<?>) {
-                return (List<Funcionario>) obj;
+                return (List<Pessoa>) obj;
             } else {
                 throw new ClassNotFoundException("Dados incompatíveis no arquivo: " + fileName);
             }

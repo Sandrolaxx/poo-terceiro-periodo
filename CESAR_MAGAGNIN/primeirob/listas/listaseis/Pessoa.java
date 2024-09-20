@@ -1,6 +1,10 @@
-
 package CESAR_MAGAGNIN.primeirob.listas.listaseis;
-public abstract class Pessoa {
+
+import java.io.Serializable;
+
+public abstract class Pessoa implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private String nome;
     private int idade;
     private Endereco endereco;
@@ -11,17 +15,30 @@ public abstract class Pessoa {
         this.endereco = endereco;
     }
 
+    public abstract void apresentarSe();
+
+    // Getters e Setters
     public String getNome() {
         return nome;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+  
     public int getIdade() {
         return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
     }
 
     public Endereco getEndereco() {
         return endereco;
     }
 
-    public abstract void apresentarse();
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
 }
