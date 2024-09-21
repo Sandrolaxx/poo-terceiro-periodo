@@ -1,24 +1,25 @@
 package ROBSON_DE_LIMA.primeirob.listas.listaSeis;
 
+
 import java.util.Date;
 
 public class ProcessaPedido {
 
-    public Pedido processar(int id, Date dataCriacao, Date dataPagamento, Date dataVencimentoReserva, Cliente cliente, Vendedor vendedor, String loja, List<Item> itens) {
-        return new Pedido(id, dataCriacao, dataPagamento, dataVencimentoReserva, cliente, vendedor, loja, itens);
-    }
-
-    public void confirmarPagamento(Pedido pedido) {
-        if (verificarValidadeReserva(pedido.getDataVencimentoReserva())) {
-            System.out.println("Pagamento confirmado!");
-        } else {
-            System.out.println("Reserva vencida, pagamento não pode ser confirmado.");
+    public Pedido processar(int idPedido, Date dataCriacao, Cliente cliente, Vendedor vendedor, Loja loja, List<Item> itens) {
+        Pedido pedido = new Pedido(idPedido, dataCriacao, cliente, vendedor, loja);
+        for (Item item : itens) {
+            pedido.adicionarItem(item);
         }
+        pedido.gerarDescricaoVenda();
+        return pedido;
     }
 
-    private boolean verificarValidadeReserva(Date dataVencimentoReserva) {
+    public boolean confirmarPagamento(Pedido pedido) {
+        return verificarValidadeReserva(pedido);
+    }
+
+    private boolean verificarValidadeReserva(Pedido pedido) {
         Date hoje = new Date();
-        return !hoje.after(dataVencimentoReserva);
+        return hoje.before(pedido.getDataVencimentoReserva());
     }
 }
-

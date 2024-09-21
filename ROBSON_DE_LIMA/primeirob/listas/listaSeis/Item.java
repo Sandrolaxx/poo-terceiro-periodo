@@ -14,7 +14,11 @@ public class Item {
     }
 
     public void gerarDescricao() {
-        System.out.println("ID: " + id + ", Nome: " + nome + ", Tipo: " + tipo + ", Valor: " + valor);
+        System.out.printf("ID: %d, Nome: %s, Tipo: %s, Valor: R$ %.2f%n", id, nome, tipo, valor);
+    }
+
+    public double getValor() {
+        return valor;
     }
 }
 
