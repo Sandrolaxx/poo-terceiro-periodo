@@ -9,10 +9,12 @@ public class Item {
     public Item(String nome, float valor) {
         this.nome = nome;
         this.valor = valor;
+        this.id = Testaobjeto.itemid;
+        Testaobjeto.itemid++;
     }
 
     public void gerarDescricao(){
-        System.out.println("ID:" + id + "Nome:" + nome + "Tipo:" + tipo + "Valor:" + valor);
+        System.out.println("ID: " + id +  " Nome: " + nome + " Tipo: " + tipo + " Valor: " + valor);
     }
 
     public float getValor() {

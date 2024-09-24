@@ -26,7 +26,4 @@ public final class ProcessaPedido {
     private static boolean verificarValidadeReserva(Date atual,Date reserva){
         return reserva.after(atual);
     }
-        
-
-
 }

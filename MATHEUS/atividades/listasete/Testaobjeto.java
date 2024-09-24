@@ -6,10 +6,12 @@ import java.util.Scanner;
 public class Testaobjeto {
 
     static int ids = 1;
+    static int itemid = 1;
 
     public static void main(String[] args) {
 
         List<Pedido> pedidos = new LinkedList<Pedido>();
+        Item[] itens = new Item[5];
         Endereco enderecoGenerico = new Endereco("esmeralda", "tupiti", "Rua jostelei");
         Loja loja1 = new Loja("Loja 1", "Razão Social 1", "45.789.348/0001-54", enderecoGenerico);
         Vendedor vendedor1 = new Vendedor("Vendedor 1", 20, new double[] { 1000, 2000, 4900 }, 2000, enderecoGenerico);
@@ -24,7 +26,7 @@ public class Testaobjeto {
         loja1.setClientes( new Cliente[] { cliente1 });
         vendedor2.apresentarse();
 
-        Item itens[] = { new Item("cafe", 25) };
+        itens[0] = new Item("cafe", 25);
 
         pedidos.add(ProcessaPedido.processar(cliente1, vendedor2, loja1, itens));
 
@@ -106,11 +108,13 @@ public class Testaobjeto {
                     }
 
                     if (pedidoFinalizado == null) {
+                        
                         System.out.println("Nenhum pedido encontrado com esse ID.");
-                        break; // Retorna ao menu
+                        break; 
+                        
                     }
 
-                    pedidoFinalizado.geraDescricaoVenda(); // Se houver alguma saída, considere imprimi-la
+                    pedidoFinalizado.geraDescricaoVenda();
 
                     if (ProcessaPedido.confirmarPagamento(pedidoFinalizado)) {
                         System.out.println("Pedido finalizado com sucesso.");
@@ -118,6 +122,34 @@ public class Testaobjeto {
                     } else {
                         System.out.println("Não foi possível concluir este pedido, por favor, faça uma nova reserva.");
                     }
+
+                    break;
+
+                    case 4:
+                    System.out.println("cadastrando item");
+                    System.out.println("digite o nome do item");
+                    String nomeDoitem = scanner.nextLine();
+                    System.out.println("digite o calor unitario do item");
+                    float valroDoItem = scanner.nextFloat();
+                    scanner.nextLine();
+
+                    for (int i = 0; i < 5; i++) {
+                        if (itens[i] == null ) {
+                            itens[i] = new Item(nomeDoitem, valroDoItem);
+                            break;
+                        }else if (i == 4 && itens[i] != null) {
+                            
+                            System.out.println("O total de 5 itens já foi atingido");
+                        }
+                    }
+                    break;
+
+                    case 5:
+                        for (Item item : itens) {
+                            if (item != null) {
+                                item.gerarDescricao();
+                            }
+                        }
 
                     break;
                 default:
