@@ -28,6 +28,6 @@ public class Humano extends Endereco {
 
     public void apresentarse() {
         System.out.println("Nome: " + nome + ", Idade: " + idade);
-        apresentarLogradouro(); // Chama o método da classe Endereco
+        apresentarLogradouro();
     }
 }

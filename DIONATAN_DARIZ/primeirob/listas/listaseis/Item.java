@@ -6,7 +6,6 @@ public class Item {
     private String tipo;
     private double valor;
 
-    // Construtor
     public Item(int id, String nome, String tipo, double valor) {
         this.id = id;
         this.nome = nome;
@@ -14,7 +13,6 @@ public class Item {
         this.valor = valor;
     }
 
-    // Getters e Setters
     public int getId() {
         return id;
     }
@@ -47,7 +45,6 @@ public class Item {
         this.valor = valor;
     }
 
-    // Método gerarDescricao
     public void gerarDescricao() {
         System.out.println("ID: " + id + ", Nome: " + nome + ", Tipo: " + tipo + ", Valor: R$ " + valor);
     }
