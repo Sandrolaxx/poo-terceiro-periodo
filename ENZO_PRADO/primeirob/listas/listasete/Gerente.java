@@ -13,7 +13,7 @@ public class Gerente extends Funcionario  {
     @Override
     void apresentarse(){
         System.out.println("Sou o Gerente ".concat(getNome()).concat("\nTenho: ") + getIdade() + " anos"
-        .concat("\nE sou da loja: " ).concat(loja.nomeFantasia));
+        .concat("\nE sou da loja: " ).concat(loja.getNomeFantasia()));
     }
 
     @Override

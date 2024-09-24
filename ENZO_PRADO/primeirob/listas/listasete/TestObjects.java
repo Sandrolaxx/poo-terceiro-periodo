@@ -8,8 +8,11 @@ import java.util.Date;
 import java.util.List;
 
 public class TestObjects {
+    private static List<Item> itens = new ArrayList<>();
+
     public static void main(String[] args) {
-        
+        itens.add(new Item(1, "Orquídea Exótica", "planta", 50));
+        itens.add(new Item(2, "Suculenta", "planta", 30));
         Scanner scanner = new Scanner(System.in);
         ProcessarPedido processarPedido = new ProcessarPedido();
         int opcao;
@@ -21,69 +24,63 @@ public class TestObjects {
             System.out.println("3. Informações da Loja");
             System.out.println("4. Informações do Cliente");
             System.out.println("5. Criar Pedido");
+            System.out.println("6. Cadastrar novo item");
+            System.out.println("7. Listar todos os itens");
+            System.out.println("8. Pesquisar item por nome");
             System.out.println("0. Sair");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
+            scanner.nextLine();
 
             switch (opcao) {
                 case 1:
                     System.out.println("------------Informações Gerente------------");
-                    Gerente gerenteUm = gerenteCadastradoUm();
-                    gerenteUm.apresentarse();
-                    gerenteUm.calcularMedia();
-                    gerenteUm.calcularBonus();
+                    mostrarGerente();
+                    systemPause();
                     break;
                 case 2:
                     System.out.println("------------Informações dos Vendedores------------");
-                    Vendedor vendedorUm = vendedorCadastradoUm();
-                    vendedorUm.apresentarse();
-                    vendedorUm.calcularMedia();
-                    vendedorUm.calcularBonus();
-                    Vendedor vendedorDois = vendedorCadastradoDois();
-                    vendedorDois.apresentarse();
-                    vendedorDois.calcularMedia();
-                    vendedorDois.calcularBonus();
+                    mostrarVendedor();
+                    systemPause();
                     break;
                 case 3:
                     System.out.println("------------Informações da Loja------------");
-                    Loja loja = lojaCadastradaUm();
-                    loja.apresentarse();
-                    loja.contarClientes();
-                    loja.contarVendedores();
-                    loja.contarGerentes();
+                    mostrarLoja();
+                    systemPause();
                     break;
                 case 4:
                     System.out.println("------------Informações do Cliente------------");
-                    Cliente clienteUm = clienteCadastradoUm();
-                    clienteUm.apresentarse();
+                    mostrarCliente();
+                    systemPause();
                     break;
                 case 5:
-                List<Item> itens = new ArrayList<>();
-
-                Item itemUm = itemCadastradoUm();
-                itens.add(itemUm);
-
-                Item itemDois = itemCadastradoDois();
-                itens.add(itemDois);
-                
-                criarPedido(scanner, processarPedido, clienteCadastradoUm(), vendedorCadastradoDois(), lojaCadastradaUm(), itens);
+               criarPedido(scanner, processarPedido, clienteCadastradoUm(), vendedorCadastradoDois(), lojaCadastradaUm(), itens);
+               systemPause();
                 break;
-
+                case 6: 
+                cadastrarItem(scanner);
+                systemPause();
+                  break;
+                case 7:
+                    listarItens();
+                    systemPause();
+                    break;
+                case 8:
+                    buscarItemPorNome(scanner);
+                    systemPause();
+                    break;
                 case 0:
-
                     break;
                 default:
                     System.out.println("Opção inválida! Tente novamente.");
                     break;
             }
         }while(opcao != 0);
-
         scanner.close();
     }
 
-
     public static Pedido criarPedido(Scanner scanner, ProcessarPedido processarPedido, Cliente cliente, Vendedor vendedor, Loja loja, List<Item> itens) {
-        Pedido pedido = processarPedido.processar(cliente, vendedor, loja, new ArrayList<>());
+        Pedido pedido = processarPedido.processarPedido(cliente, vendedor, loja, new ArrayList<>());
     
         System.out.println("Itens disponíveis para compra:");
         for (int i = 0; i < itens.size(); i++) {
@@ -101,7 +98,7 @@ public class TestObjects {
             if (opcao > 0 && opcao <= itens.size()) {
                 Item itemEscolhido = itens.get(opcao - 1);
                 pedido.adicionarItem(itemEscolhido);
-                System.out.println("Item " + itemEscolhido.nome + " adicionado ao pedido.");
+                System.out.println("Item " + itemEscolhido.getNome() + " adicionado ao pedido.");
             } else if (opcao != 0) {
                 System.out.println("Opção inválida. Tente novamente.");
             }
@@ -126,165 +123,150 @@ public class TestObjects {
     }
 
 
-
-    public static Item itemCadastradoUm() {
-        Item item = new Item();
-        item.id = 1;
-        item.nome = "Orquídea Exótica";
-        item.tipo = "Planta";
-        item.valor = 50.0;
-        return item;
-    }
-
-    public static Item itemCadastradoDois() {
-        Item item = new Item();
-        item.id = 2;
-        item.nome = "Suculenta";
-        item.tipo = "Planta";
-        item.valor = 30.0;
-        return item;
-    }
-
-
+    public static void cadastrarItem(Scanner scanner) {
+        System.out.println("Cadastrar novo item");
     
-
-    public static Loja lojaCadastradaUm(){
-
-        Loja loja = new Loja();
-
-        loja.nomeFantasia = "My Planty";
-        loja.razaoSocial = "Plantas dona Gabrielinha LTDA";
-        loja.cnpj = "26.880.836/0001-11";
-        loja.endereco = enderecoLojaCadastradaUm();
-        return loja;
-    }
-
-    public static Endereco enderecoLojaCadastradaUm(){
-        Endereco enderecoLojaUm = new Endereco();
-
-        enderecoLojaUm.estado = "Parana";
-        enderecoLojaUm.cidade = "Cascavel";
-        enderecoLojaUm.bairro = "Universitarios";
-        enderecoLojaUm.rua = "AV. Das Torres";
-        enderecoLojaUm.numero = 232;
-        enderecoLojaUm.complemento = "Em frente a praça";
-
-        return enderecoLojaUm;
-    }
-
-
-    public static Vendedor vendedorCadastradoUm(){
-
-        Vendedor vendedor = new Vendedor(); 
-        vendedor.nome = "Enzo";
-        vendedor.idade = 19;
-        vendedor.loja = lojaCadastradaUm();
-        vendedor.endereco = enderecoVendedorCadastradoUm();
-        vendedor.salariBase = 5000;
-        vendedor.salarioRecebido = new double[ ]{5000, 5323, 5432};
-        return vendedor;
-    }
-
-    public static Endereco enderecoVendedorCadastradoUm(){
-
-        Endereco enderecoVendedorCadastradoUm = new Endereco();
-
-        enderecoVendedorCadastradoUm.estado = "Parana";
-        enderecoVendedorCadastradoUm.cidade = "Cascavel";
-        enderecoVendedorCadastradoUm.bairro = "Jardim Paulista";
-        enderecoVendedorCadastradoUm.rua = "Cuiaba";
-        enderecoVendedorCadastradoUm.numero = 332;
-        enderecoVendedorCadastradoUm.complemento = "Do lado da pizzaria";
-
-        return enderecoVendedorCadastradoUm;
-    }
-
-    public static Vendedor vendedorCadastradoDois(){
-
-        Vendedor vendedor2 = new Vendedor(); 
-        vendedor2.nome = "Barbara";
-        vendedor2.idade = 19;
-        vendedor2.loja = lojaCadastradaUm();
-        vendedor2.endereco = enderecoVendedorCadastradoDois();
-        vendedor2.salariBase = 8000;
-        vendedor2.salarioRecebido = new double[ ]{8000, 8900, 8500};
-
-        return vendedor2;
-    }
-
-    public static Endereco enderecoVendedorCadastradoDois(){
-
-        Endereco enderecoVendedorCadastradoDois = new Endereco();
-
-        enderecoVendedorCadastradoDois.estado = "Parana";
-        enderecoVendedorCadastradoDois.cidade = "Cascavel";
-        enderecoVendedorCadastradoDois.bairro = "Ciro Nardi";
-        enderecoVendedorCadastradoDois.rua = "AV. Carlos Gomes";
-        enderecoVendedorCadastradoDois.numero = 367;
-        enderecoVendedorCadastradoDois.complemento = "Em frente aos correios";
-
-        return enderecoVendedorCadastradoDois;
-    }
-
-    public static Cliente clienteCadastradoUm(){
-
-        Cliente clienteum = new Cliente();
-        
-
-        clienteum.nome = "Camille";
-
-        clienteum.idade = 20;
-        
-        clienteum.endereco = enderecoClienteCadastradoUm();
-
-        return clienteum;
-    }
-
+        System.out.print("Informe o nome do item: ");
+        String nome = scanner.nextLine();  
     
-    public static Endereco enderecoClienteCadastradoUm(){
+        System.out.print("Informe p tipo do item: ");
+        String categoria = scanner.nextLine(); 
+    
+        System.out.print("Informe o preço do item: ");
+        double preco = scanner.nextDouble();  
+        scanner.nextLine();  
 
-        Endereco enderecoClienteCadastradoUm = new Endereco();
-
-        enderecoClienteCadastradoUm.estado = "Parana";
-        enderecoClienteCadastradoUm.cidade = "Cascavel";
-        enderecoClienteCadastradoUm.bairro = "Universitarios";
-        enderecoClienteCadastradoUm.rua = "Carlos Dias";
-        enderecoClienteCadastradoUm.numero = 332;
-        enderecoClienteCadastradoUm.complemento = "Sem complemento";
-
-        return enderecoClienteCadastradoUm;
+        Item novoItem = new Item(itens.size() + 1, nome, categoria, preco);
+        itens.add(novoItem);
+    
+        System.out.println("Item cadastrado com sucesso!");
     }
 
-    public static Gerente gerenteCadastradoUm(){
+    public static void buscarItemPorNome(Scanner scanner) {
+        System.out.print("Informe o nome do item a ser buscado: ");
+        String nomeBuscado = scanner.nextLine();
 
-         Gerente gerente = new Gerente();
+        boolean encontrado = false;
+        for (Item item : itens) {
+            if (item.getNome().equalsIgnoreCase(nomeBuscado)) {
+                System.out.println(item.getId() + " - " + item.getNome() + " (" + item.getTipo() + ") - R$ " + item.getValor());
+                encontrado = true;
+            }
+        }
 
-         gerente.nome = "Sandro";
-         gerente.idade = 24;
-         gerente.loja = lojaCadastradaUm();
-         gerente.endereco = enderecoGerenteCadastradoUm();
-         gerente.salariBase = 9000;
-         gerente.salarioRecebido = new double[ ]{10000, 9500, 10321};
-
-         return gerente;
-
-    }
-
-    public static Endereco enderecoGerenteCadastradoUm(){
-
-        Endereco enderecoGerenteCadastradoUm = new Endereco();
-
-        enderecoGerenteCadastradoUm.estado = "Parana";
-        enderecoGerenteCadastradoUm.cidade = "Cascavel";
-        enderecoGerenteCadastradoUm.bairro = "Country";
-        enderecoGerenteCadastradoUm.rua = "José Rico";
-        enderecoGerenteCadastradoUm.numero = 749;
-        enderecoGerenteCadastradoUm.complemento = "Casa de 4 andares";
-
-        return enderecoGerenteCadastradoUm;
+        if (!encontrado) {
+            System.out.println("Item não encontrado.");
+        }
     }
 
 
+    public static void listarItens(){
+        for(Item item : itens){
+            System.out.println("ID: " + item.getId() 
+            +"\nNome: " + item.getNome() 
+            +"\nTipo: " + item.getTipo() 
+            + "\nPreço: R$" + item.getValor() );
+
+        }
+
+    }
+
+    private static void systemPause(){
+        System.out.println("Pressione Enter para continuar...");
+        Scanner scanner = new Scanner(System.in);
+        scanner.nextLine();
+    }
+
+    public static void mostrarGerente(){
+        Gerente gerenteUm = gerenteCadastradoUm();
+                    gerenteUm.apresentarse();
+                    gerenteUm.calcularMedia();
+                    gerenteUm.calcularBonus();
+                   
+    }
+
+
+    public static void mostrarVendedor(){
+        Vendedor vendedorUm = vendedorCadastradoUm();
+        vendedorUm.apresentarse();
+        vendedorUm.calcularMedia();
+        vendedorUm.calcularBonus();
+        
+        Vendedor vendedorDois = vendedorCadastradoDois();
+
+        vendedorDois.apresentarse();
+        vendedorDois.calcularMedia();
+        vendedorDois.calcularBonus();
+
+    }
+
+    public static void mostrarCliente(){
+        Cliente clienteUm = clienteCadastradoUm();
+                    clienteUm.apresentarse();
+            
+    }
+
+    public static void mostrarLoja(){
+        Loja loja = lojaCadastradaUm(); 
+        loja.adicionarVendedor(vendedorCadastradoUm());
+        loja.adicionarVendedor(vendedorCadastradoDois());
+        loja.adicionarGerente(gerenteCadastradoUm());
+        loja.adicionarCliente(clienteCadastradoUm());
+        loja.apresentarse();
+        loja.contarClientes();
+        loja.contarVendedores();
+        loja.contarGerentes();
+    }
+
+    private static Item itemCadastradoUm() {
+        return new Item(1, "Orquídea Exótica", "planta", 50);
+    }
+
+    private static Item itemCadastradoDois() {
+        return new Item(2, "Suculenta", "Planta", 30);
+    }
+
+    private static Loja lojaCadastradaUm(){
+       return new Loja(enderecoLojaCadastradaUm(),"Plantas dona Gabrielinha LTDA" , "My Planty", "26.880.836/0001-11");
+    }
+
+    private static Endereco enderecoLojaCadastradaUm(){
+        return new Endereco("Parana", "Cascavel", "Universitarios", "AV. Das Torres", 232, "Em frente a praça");
+    }
+
+
+    private static Vendedor vendedorCadastradoUm(){
+        return new Vendedor("Enzo", 19, enderecoVendedorCadastradoUm(), lojaCadastradaUm(), 5000, List.of(5000.0,5323.0,5432.0));
+    }
+
+    private static Endereco enderecoVendedorCadastradoUm(){
+        return new Endereco("Parana", "Cascavel", "Jardim Paulista", "Cuiaba", 332, "Do lado da pizzaria");
+    }
+
+    private static Vendedor vendedorCadastradoDois(){
+        return new Vendedor("Barbara", 19, enderecoVendedorCadastradoDois(), lojaCadastradaUm(), 8000, List.of(8000.0, 8900.0, 8500.0));
+    }
+
+    private static Endereco enderecoVendedorCadastradoDois(){
+        return new Endereco("Parana", "Cascavel", "Ciro Nardi", "AV. Carlos Gomes", 367, "Em frente aos correios");
+    }
+   
+    private static Cliente clienteCadastradoUm(){
+        return new Cliente("Camille", 20, enderecoClienteCadastradoUm());
+    }
+
+    private static Endereco enderecoClienteCadastradoUm(){
+        return new Endereco("Parana", "Cascavel", "Universitarios", "Carlos Dias", 332, "Sem complemento");
+    }
+
+    private static Gerente gerenteCadastradoUm(){
+        return new Gerente("Sandro", 24, enderecoClienteCadastradoUm(), lojaCadastradaUm(), 9500, List.of(10000.0, 9500.0, 10321.0));
+
+    }
+
+    private static Endereco enderecoGerenteCadastradoUm(){
+        return new Endereco("Parana", "Cascavel", "Country", "José Rico", 749, "Casa de 4 andares");
+    }
 
 }
 
