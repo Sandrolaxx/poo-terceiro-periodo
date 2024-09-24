@@ -1,0 +1,23 @@
+package ERICK_SCUR.primeirob.listas.lista5;
+
+import javax.swing.*;
+
+class Cliente {
+    private String nome;
+    private int idade;
+    private String cidade;
+    private String bairro;
+    private String rua;
+
+    public Cliente(String nome, int idade, String cidade, String bairro, String rua) {
+        this.nome = nome;
+        this.idade = idade;
+        this.cidade = cidade;
+        this.bairro = bairro;
+        this.rua = rua;
+    }
+
+    public void apresentarse() {
+        JOptionPane.showMessageDialog(null, "Nome: " + nome + "\nIdade: " + idade);
+    }
+}
