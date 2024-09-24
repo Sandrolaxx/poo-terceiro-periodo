@@ -1,4 +1,4 @@
-package DIONATAN_DARIZ.primeirob.aulas.listas.listatres;
+package DIONATAN_DARIZ.primeirob.listas.listatres;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -127,7 +127,6 @@ public class Calculadora {
         scanner.close();
     }
 
-    // Método para obter um mês válido (1-12)
     private static int obterMesValido(Scanner scanner) {
         int mes;
         do {
@@ -140,7 +139,7 @@ public class Calculadora {
         return mes;
     }
 
-    // Método para obter um dia válido (1-30)
+    
     private static int obterDiaValido(Scanner scanner) {
         int dia;
         do {
