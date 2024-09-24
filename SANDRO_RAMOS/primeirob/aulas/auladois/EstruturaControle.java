@@ -1,4 +1,4 @@
-package SANDRO_RAMOS.primeirob.aulas.auladois;
+package primeirob.aulas.auladois;
 
 public class EstruturaControle {
 
