@@ -13,7 +13,6 @@ public class Pedido {
     private Loja loja;
     private Item[] itens;
 
-    // Construtor da classe Pedido
     public Pedido(int id, Date dataCriacao, Date dataPagamento, Date dataVencimentoReserva,
                   Cliente cliente, Vendedor vendedor, Loja loja, Item[] itens) {
         this.id = id;
@@ -26,7 +25,6 @@ public class Pedido {
         this.itens = itens;
     }
 
-    // Método para calcular o valor total do pedido
     public double calcularValorTotal() {
         double total = 0.0;
         for (Item item : itens) {
@@ -35,7 +33,6 @@ public class Pedido {
         return total;
     }
 
-    // Método para gerar a descrição da venda
     public String gerarDescricaoVenda() {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         String descricao = "Pedido ID: " + id +
@@ -44,7 +41,6 @@ public class Pedido {
         return descricao;
     }
 
-    // Getters e Setters (se necessário)
     public int getId() {
         return id;
     }
