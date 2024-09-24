@@ -13,8 +13,8 @@ public class Vendedor extends Funcionario  {
 
     @Override
     void apresentarse(){
-        System.out.println("Sou o vendedor ".concat(getNome()).concat("\nTenho: ") + getIdade() + " anos"
-        .concat("\nE sou da loja: " ).concat(loja.nomeFantasia)); 
+        System.out.println("Sou o(a) vendedor(a) ".concat(getNome()).concat("\nTenho: ") + getIdade() + " anos"
+        .concat("\nE sou da loja: " ).concat(loja.getNomeFantasia())); 
 
     }
 

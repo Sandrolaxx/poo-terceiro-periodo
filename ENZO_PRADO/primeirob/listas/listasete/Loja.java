@@ -1,61 +1,105 @@
 package ENZO_PRADO.primeirob.listas.listasete;
 
-public class Loja{
+import java.util.ArrayList;
 
-    Endereco endereco;
+public class Loja {
 
-    String nomeFantasia;
+    private Endereco endereco;
+    private String nomeFantasia;
+    private String razaoSocial;
+    private String cnpj;
 
-    String razaoSocial;
+    private ArrayList<Vendedor> vendedores = new ArrayList<>();
+    private ArrayList<Cliente> clientes = new ArrayList<>();
+    private ArrayList<Gerente> gerentes = new ArrayList<>();
 
-    String cnpj;
+    public Loja(Endereco endereco, String nomeFantasia, String razaoSocial, String cnpj) {
+        this.endereco = endereco;
+        this.nomeFantasia = nomeFantasia;
+        this.razaoSocial = razaoSocial;
+        this.cnpj = cnpj;
+    }
 
-    Vendedor[] vendedores = new Vendedor[100];
-    Cliente[] cliente = new Cliente[1000];
-    Gerente[] gerente = new Gerente[1000];
-
-
-    void apresentarse(){
-        System.out.println("Nome fantasia: ".concat(nomeFantasia).concat("\n CNPJ: ".concat(cnpj)));
+    void apresentarse() {
+        System.out.println("Nome fantasia: " + nomeFantasia + "\nCNPJ: " + cnpj);
         endereco.apresentarLogradouro();
     }
 
-    void contarClientes(){
-
-        int contador = 0;
-
-        for(int i = 0; i < cliente.length; i++){
-            
-            if (cliente[i] != null) {
-                contador++;  
-            }
-           
-        }
-        System.out.println("A quantidade de clientes da loja são: " + contador);
+    void contarClientes() {
+        System.out.println("A quantidade de clientes da loja são: " + clientes.size());
     }
 
-    void contarVendedores(){
-        int contador = 0;
-
-        for(int i = 0; i < vendedores.length; i++){
-
-            if(vendedores[i] != null){
-            contador++;
-            }
-        }
-        System.out.println("A quantidade de vendedores da loja são: " + contador);
+    void contarVendedores() {
+        System.out.println("A quantidade de vendedores da loja são: " + vendedores.size());
+    }
+    
+    void contarGerentes() {
+        System.out.println("A quantidade de gerentes da loja são: " + gerentes.size());
     }
 
-    void contarGerentes(){
-        int contador = 0;
-
-        for(int i = 0; i < gerente.length; i++){
-
-            if(gerente[i] != null){
-            contador++;
-            }
-        }
-        System.out.println("A quantidade de gerentes da loja são: " + contador);
+    
+    public Endereco getEndereco() {
+        return endereco;
     }
 
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getNomeFantasia() {
+        return nomeFantasia;
+    }
+
+    public void setNomeFantasia(String nomeFantasia) {
+        this.nomeFantasia = nomeFantasia;
+    }
+
+    public String getRazaoSocial() {
+        return razaoSocial;
+    }
+
+    public void setRazaoSocial(String razaoSocial) {
+        this.razaoSocial = razaoSocial;
+    }
+
+    public String getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
+
+    public void adicionarCliente(Cliente cliente) {
+        if (!clientes.contains(cliente)) {
+            clientes.add(cliente);
+        } else {
+            System.out.println("Cliente já cadastrado.");
+        }
+    }
+
+    public void adicionarVendedor(Vendedor vendedor) {
+        if (!vendedores.contains(vendedor)) {
+            vendedores.add(vendedor);
+        } else {
+            System.out.println("Vendedor já cadastrado.");
+        }
+    }
+
+    public void adicionarGerente(Gerente gerente) {
+        if (!gerentes.contains(gerente)) {
+            gerentes.add(gerente);
+        } else {
+            System.out.println("Gerente já cadastrado.");
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Loja{" +
+                "nomeFantasia='" + nomeFantasia + '\'' +
+                ", cnpj='" + cnpj + '\'' +
+                ", endereco=" + endereco +
+                '}';
+    }
 }

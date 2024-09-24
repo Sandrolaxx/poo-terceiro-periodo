@@ -93,7 +93,7 @@ public class Pedido {
     public void calcularValorTotal() {
         total = 0;
         for (Item item : itens) {
-            total += item.getvalor();  
+            total += item.getValor();  
         }
         System.out.println("Valor total: " + total);
     }
