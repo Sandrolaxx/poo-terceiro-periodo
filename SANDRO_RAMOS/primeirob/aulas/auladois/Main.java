@@ -1,4 +1,4 @@
-package primeirob.aulas.auladois;
+package SANDRO_RAMOS.primeirob.aulas.auladois;
 
 public class Main {
 
