@@ -1,4 +1,4 @@
-package EDILSON_ALVES.primeirob.listas.listaseis;
+package EDILSON_ALVES.primeirob.listas.listasete;
 
 import java.util.Date;
 
