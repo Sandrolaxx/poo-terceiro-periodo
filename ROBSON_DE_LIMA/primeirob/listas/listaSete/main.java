@@ -7,7 +7,7 @@ public class main {
         int opcao;
     
         do {
-            System.out.println(" ---------------------------------");
+            System.out.println(" --------------------------------");
             System.out.println("| Menu:                           |");
             System.out.println("| [1] - Calcular Preço Total      |");
             System.out.println("| [2] - Calcular Troco            |");
@@ -19,7 +19,7 @@ public class main {
             System.out.println("| [8] - Buscar Item por Nome      |");
             System.out.println("| [9] - Criar Pedido              |");
             System.out.println("| [10] - Sair                     |");
-            System.out.println(" ---------------------------------");
+            System.out.println(" --------------------------------");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
             scanner.nextLine(); // Consumir nova linha
