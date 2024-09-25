@@ -5,10 +5,14 @@ public class Gerente {
    public int idade;
    public String Loja;
    public Endereco endereco;
-   public int salarioBase;
-   public int[] salarioRecebido;
+   public double salarioBase;
+   public double[] salarioRecebido;
    
-   public Gerente(String nome, int idade, String loja, Endereco endereco, int salarioBase ,int[] salarioRecebido ) {
+
+   public Gerente(){
+
+   }
+   public Gerente(String nome, int idade, String loja, Endereco endereco, int salarioBase ,double[] salarioRecebido ) {
     this.nome = nome;
     this.idade = idade;
     this.Loja = loja;
@@ -23,22 +27,41 @@ public class Gerente {
       System.out.println("loja "+ this.getLoja());
       System.out.println("salario base "+ this.getSalarioBase());
 
-      for(int salarioo : salarioRecebido){
+      for(double salarioo : salarioRecebido){
          System.out.println("salario recebido "+ salarioo);
       }
    }
+   
 
 
+   public void setNome(String nome) {
+      this.nome = nome;
+   }
+   public void setIdade(int idade) {
+      this.idade = idade;
+   }
+   public void setLoja(String loja) {
+      Loja = loja;
+   }
+   public void setEndereco(Endereco endereco) {
+      this.endereco = endereco;
+   }
+   public void setSalarioBase(double salarioBase) {
+      this.salarioBase = salarioBase;
+   }
+   public void setSalarioRecebido(double[] salarioRecebido) {
+      this.salarioRecebido = salarioRecebido;
+   }
    public int getIdade() {
       return idade;
    }
    public String getLoja() {
       return Loja;
    }
-   public int getSalarioBase() {
+   public double getSalarioBase() {
       return salarioBase;
    }
-   public int[] getSalarioRecebido() {
+   public double[] getSalarioRecebido() {
       return salarioRecebido;
    }
    public String getNome() {

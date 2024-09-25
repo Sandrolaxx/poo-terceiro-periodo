@@ -63,6 +63,38 @@ public class Pedido{
         return dataVencimentoReserva;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setDataCriacao(Date dataCriacao) {
+        this.dataCriacao = dataCriacao;
+    }
+
+    public void setDataPagamento(Date dataPagamento) {
+        this.dataPagamento = dataPagamento;
+    }
+
+    public void setDataVencimentoReserva(Date dataVencimentoReserva) {
+        this.dataVencimentoReserva = dataVencimentoReserva;
+    }
+
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
+    }
+
+    public void setVendedor(String vendedor) {
+        this.vendedor = vendedor;
+    }
+
+    public void setLoja(String loja) {
+        Loja = loja;
+    }
+
+    public void setItens(Item[] itens) {
+        this.itens = itens;
+    }
+
     public double calcularValorTotal(Item[] item){
 
         for (Item itemm : itens) {

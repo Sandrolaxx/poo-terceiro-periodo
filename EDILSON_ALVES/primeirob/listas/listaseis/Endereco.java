@@ -17,14 +17,38 @@ public class Endereco {
         System.out.println("complemento "+this.complemento);
     }
 
-    public Endereco(String estado, String cidade, String bairro, int numero, String complemento) {
+    public Endereco(){
+
+    }
+    // public Endereco(String estado, String cidade, String bairro, int numero, String complemento) {
+    //     this.estado = estado;
+    //     this.cidade = cidade;
+    //     this.bairro = bairro;
+    //     this.numero = numero;
+    //     this.complemento = complemento;
+    // }
+    
+
+
+    public void setEstado(String estado) {
         this.estado = estado;
-        this.cidade = cidade;
-        this.bairro = bairro;
-        this.numero = numero;
-        this.complemento = complemento;
     }
 
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
+    }
 
     public String getEstado() {
         return estado;
