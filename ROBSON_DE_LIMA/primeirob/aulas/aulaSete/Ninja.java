@@ -4,8 +4,7 @@ public class Ninja {
     public Ninja(){
         String nome;
 
-        public Ninja (String nome){
-            this nome = nome
+        
+            
         }
     }
-}
