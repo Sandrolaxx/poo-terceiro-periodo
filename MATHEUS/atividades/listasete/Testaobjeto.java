@@ -61,18 +61,30 @@ public class Testaobjeto {
                         break;
                     }
 
-                    System.out.print("Quantos itens você deseja adicionar ao pedido? ");
-                    int numItens = Integer.parseInt(scanner.nextLine());
-                    Item[] novosItens = new Item[numItens];
-
-                    for (int i = 0; i < numItens; i++) {
-                        System.out.print("Digite o nome do item " + (i + 1) + ": ");
-                        String nomeItem = scanner.nextLine();
-                        System.out.print("Digite o preço do item " + (i + 1) + ": ");
-                        Float precoItem = Float.parseFloat(scanner.nextLine());
-                        novosItens[i] = new Item(nomeItem, precoItem);
+                    
+                    for (Item item : itens) {
+                        if (item != null) {
+                            item.gerarDescricao();
+                        }
                     }
+                    List<Item> itensDoPedido = new LinkedList<Item>();
+                    int submenu = 1;
+                    do{
+                        System.out.print("selecione o numero do item que deseja comprar");
+                        int indexitem = (scanner.nextInt() - 1);
+                        Item posicaoDoitem = itens[indexitem];
+                        System.out.print("digite a quantidade de itens que deseja comprar de " + posicaoDoitem.getNome() + ":");
+                        int quantidadeDeItens = scanner.nextInt();
+                        for (int i= 0; i != quantidadeDeItens; i++) {
+                            itensDoPedido.add(posicaoDoitem);
+                        }
+                        System.out.println("deseja incluir algum outro item? \n[1] - sim \n[0] - não ");
+                        submenu = scanner.nextInt();
+                    }while(submenu != 0);
 
+                    Item[] novosItens = new Item[itensDoPedido.size()];
+                    novosItens = itensDoPedido.toArray(novosItens);
+                    
                     pedidos.add(ProcessaPedido.processar(cliente, vendedor, loja1, novosItens));
 
                     break;
@@ -80,7 +92,9 @@ public class Testaobjeto {
                 case 2:
                     System.out.println("Listar pedidos");
                     for (Pedido pedido : pedidos) {
-                        pedido.geraDescricaoVenda();
+                        if (pedido != null) {
+                            pedido.geraDescricaoVenda();
+                        }
                     }
 
                     break;
@@ -149,6 +163,15 @@ public class Testaobjeto {
                             if (item != null) {
                                 item.gerarDescricao();
                             }
+                        }
+
+                    break;
+                    case 6:
+                        System.out.println("digite parcialmente o nome do produto que deseja encontrar");
+                        String busca = scanner.nextLine();
+                        Item itemBusca = Item.buscarPornome(itens, busca);
+                        if (itemBusca != null) {
+                            itemBusca.gerarDescricao();
                         }
 
                     break;

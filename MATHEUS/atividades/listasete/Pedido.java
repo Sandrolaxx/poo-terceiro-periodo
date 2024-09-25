@@ -1,15 +1,14 @@
 import java.util.Date;
 
 public class Pedido {
-    private int id;
-    
+    private int id;   
     private Date dataCriacao;
     private Date dataPagamento;
-    
     private Date dataVencimentoReserva; 
     private Cliente cliente;
     private Vendedor vendedor;
     private Loja loja;
+
     private Item[] itens;
 
     public Pedido(int id, Date dataCriacao, Date dataVencimentoReserva,
@@ -26,7 +25,9 @@ public class Pedido {
     public float calcularValorTotal(){
         float valorTotal = 0;
         for(Item item : itens){
-            valorTotal += item.getValor();
+            if (item != null) {
+                valorTotal += item.getValor();
+            }
         }
         return valorTotal;
     }
@@ -45,5 +46,14 @@ public class Pedido {
     }
     public int getId() {
         return id;
+    }
+    public Cliente getCliente() {
+        return cliente;
+    }
+    public Vendedor getVendedor() {
+        return vendedor;
+    }
+    public Loja getLoja() {
+        return loja;
     }
 }
