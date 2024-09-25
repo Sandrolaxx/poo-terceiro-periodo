@@ -33,6 +33,11 @@ public class Menu {
         return new Cliente("Carlos", 40, enderecoCliente);
     }
 
+    public static Gerente criarGerente() {
+        Endereco enderecoGerente = new Endereco("PR", "Cascavel", "Country", "Rua Manaus", 42, "Loja 0");
+        return new Gerente("Maria", 35, "MyyPlant", enderecoGerente, 3000.00);
+    }
+
     public static ArrayList<Item> criarItensTeste() {
         ArrayList<Item> itens = new ArrayList<>();
         itens.add(new Item(1, "Copo de leite", "Planta", 100.00));
