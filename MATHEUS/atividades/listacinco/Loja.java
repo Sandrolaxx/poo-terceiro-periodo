@@ -1,21 +1,15 @@
+package MATHEUS.atividades.listacinco;
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
 
 class Loja {
-    public String nomeFantasia;
-    public String razaoSocial;
-    public String cnpj;
-    public Vendedor[] vendedores;
-    public Cliente[] clientes;
-    public Endereco endereco;
+    public String cidade;
+    public String bairro;
+    public String rua;
+    
 
-    public Loja(String nomeFantasia, String razaoSocial, String cnpj, Endereco endereco){
-        this.nomeFantasia = nomeFantasia;
-        this.razaoSocial = razaoSocial;
-        this.cnpj = cnpj;
-        this.endereco = endereco;
-    }
-
-    public void apresentarse(){
-        System.out.println("Nome Fantasia: " + nomeFantasia + "\nRaz" + razaoSocial + "\nCNPJ: " + cnpj);
-        this.endereco.apresentarse();
-    }
 }

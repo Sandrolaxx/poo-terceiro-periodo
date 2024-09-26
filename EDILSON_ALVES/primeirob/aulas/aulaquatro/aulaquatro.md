@@ -43,7 +43,7 @@ está ligado a organização.
 
 > Conceito
 
-![Conceito](./imagens/image.png)
+![Conceito](/EDILSON_ALVES/primeirob/aulas/aulaquatro/imagens/image.png)
 
 </div>
 
