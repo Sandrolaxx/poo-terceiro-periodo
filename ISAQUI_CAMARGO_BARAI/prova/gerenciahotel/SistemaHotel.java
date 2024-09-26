@@ -1,4 +1,4 @@
-package ISAQUI_CAMARGO_BARAI.PROVA.gerenciahotel;
+package ISAQUI_CAMARGO_BARAI.prova.gerenciahotel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,7 +85,7 @@ class Reserva{
     public void realizarCheckOut(){
 
         quarto.setDisponivel(true);
-        System.out.println("Checkout realizado para " + cliente.getNome() + "Total a pagar: R$ " +calcularTotal());
+        System.out.println("Checkout realizado para " + cliente.getNome() + "Total a pagar: R$ " + calcularTotal());
 
     }
 }
