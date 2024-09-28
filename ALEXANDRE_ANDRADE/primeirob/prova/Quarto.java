@@ -1,4 +1,4 @@
-package primeirob.prova;
+package ALEXANDRE_ANDRADE.primeirob.prova;
 
 public class Quarto {
     int numero;
@@ -9,4 +9,3 @@ public class Quarto {
         this.disponivel = true;
     }
 }
-

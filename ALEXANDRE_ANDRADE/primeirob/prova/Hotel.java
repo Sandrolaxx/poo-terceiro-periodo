@@ -1,4 +1,4 @@
-package primeirob.prova;
+package ALEXANDRE_ANDRADE.primeirob.prova;
 
 import java.util.Scanner;
 
@@ -83,4 +83,3 @@ public class Hotel {
         }
     }
 }
-
