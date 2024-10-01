@@ -1,20 +1,3 @@
-# Destaques do Repo - Primeiro BI🏆
-
-Abaixo a lista dos melhores alunos que colaboram com este repositório. Os alunos se destacaram na qualidade de suas entregas, comprometimento em sala e compreensão do conteúdo de Programação Orientada a Objetos.
-
-* **Tiago da Silva Soares**
-* **Pedro Augusto Acordi Soares**
-* **Érick Scur Padilha**
-* **Dionatan Henrique Dariz**
-* Enzo Gonzaga Prado
-* Gabriel Moraes Heidrich
-* Matheus Lima da Silveira
-* Murilo Wolff Klug
-
-Caso você esteja nesse pódio, você está no caminho certo! Continue se esforçando! Seu eu do futuro irá lhe agradecer.
-
----
-
 # ☕ Desenvolvimento Orientado a Objetos
 
 ### Comandos GIT
