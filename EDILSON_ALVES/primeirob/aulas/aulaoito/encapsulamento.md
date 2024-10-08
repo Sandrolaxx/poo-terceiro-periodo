@@ -1,0 +1,1 @@
+oque é um construtor sao metodosde uma classe que são chamados para inicializar a instacia de uma classe
