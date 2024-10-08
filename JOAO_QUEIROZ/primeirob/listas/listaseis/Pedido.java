@@ -1,4 +1,4 @@
-package listas.listaseis;
+package primeirob.listas.listaseis;
 
 import java.util.ArrayList;
 import java.util.Date;
