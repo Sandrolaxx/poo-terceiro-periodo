@@ -1,4 +1,4 @@
-package CESAR_MAGAGNIN.primeirob.prova;
+package CESAR_MAGAGNIN.primeirob.provaeu;
 
 public class Endereco {
     private String rua;
