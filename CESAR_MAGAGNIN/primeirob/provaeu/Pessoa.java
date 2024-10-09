@@ -1,4 +1,4 @@
-package CESAR_MAGAGNIN.primeirob.provaeu;
+package primeirob.provaeu;
 
 
 abstract class Pessoa {

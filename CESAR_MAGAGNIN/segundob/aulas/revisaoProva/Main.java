@@ -1,4 +1,4 @@
-package CESAR_MAGAGNIN.segundob.aulas.revisaoProva;
+package segundob.aulas.revisaoProva;
 import java.util.Scanner;
 public class Main {
     static Scanner input = new Scanner(System.in);

@@ -1,4 +1,4 @@
-package CESAR_MAGAGNIN.primeirob.provaeu;
+package primeirob.provaeu;
 
 public class Hospede extends Pessoa {
     public Hospede(String nome, int idade, String sexo) {

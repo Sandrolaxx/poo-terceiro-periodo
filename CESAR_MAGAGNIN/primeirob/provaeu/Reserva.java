@@ -1,4 +1,4 @@
-package CESAR_MAGAGNIN.primeirob.provaeu;
+package primeirob.provaeu;
 
 import java.util.Date;
 import java.util.List;

@@ -1,8 +1,8 @@
-package CESAR_MAGAGNIN.segundob.aulas.aulaum;
+package segundob.aulas.aulaum;
 
 public class ProcessaPedido {
-    public Pedido processa(Pedido pedido){
+    public int processa(Pedido pedido){
         //
-        return (true);
+        return (15);
     }
 }

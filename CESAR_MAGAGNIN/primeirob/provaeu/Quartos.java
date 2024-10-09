@@ -1,4 +1,4 @@
-package CESAR_MAGAGNIN.primeirob.provaeu;
+package primeirob.provaeu;
 
 public class Quartos {
     private int numeroQuarto;

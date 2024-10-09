@@ -1,4 +1,4 @@
-package CESAR_MAGAGNIN.segundob.aulas.revisaoProva;
+package segundob.aulas.revisaoProva;
 
 public class Quarto {
     private Integer id;

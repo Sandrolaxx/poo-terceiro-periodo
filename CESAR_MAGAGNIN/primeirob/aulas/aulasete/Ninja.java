@@ -1,4 +1,4 @@
-package CESAR_MAGAGNIN.primeirob.aulas.aulasete;
+package primeirob.aulas.aulasete;
 
 public class Ninja {
     String nome;

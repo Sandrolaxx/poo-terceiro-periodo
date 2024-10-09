@@ -1,4 +1,4 @@
-package CESAR_MAGAGNIN.primeirob.listas.listaum;
+package primeirob.listas.listaum;
 import java.util.Scanner;
 public class Calculadoraum {
    public static void main (String[] args) {

@@ -1,4 +1,4 @@
-package CESAR_MAGAGNIN.primeirob.listas.listasete;
+package primeirob.listas.listasete;
 
 import java.awt.*;
 import java.util.List;

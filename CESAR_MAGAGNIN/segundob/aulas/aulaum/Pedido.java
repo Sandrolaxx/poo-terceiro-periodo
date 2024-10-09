@@ -1,4 +1,4 @@
-package CESAR_MAGAGNIN.segundob.aulas.aulaum;
+package segundob.aulas.aulaum;
 
 public class Pedido {
     

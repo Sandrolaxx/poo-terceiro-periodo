@@ -1,5 +1,5 @@
 
-package CESAR_MAGAGNIN.primeirob.listas.listasete;
+package primeirob.listas.listasete;
 // Loja.java
 
 import java.io.Serializable;
