@@ -1,4 +1,4 @@
-package JOAO_VITOR_SOUZA.primeirob.aulas.auladois;
+package primeirob.aulas.auladois;
 
 public class Acesso {
 

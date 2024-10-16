@@ -1,4 +1,4 @@
-package JOAO_VITOR_SOUZA.primeirob.aulas.aulatres;
+package primeirob.aulas.aulatres;
 
 public class Loops {
 
