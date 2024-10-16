@@ -1,4 +1,4 @@
-package JOAO_VITOR_SOUZA.primeirob.listas.listaseis;
+package primeirob.listas.listaseis;
 
 public class Endereco {
         

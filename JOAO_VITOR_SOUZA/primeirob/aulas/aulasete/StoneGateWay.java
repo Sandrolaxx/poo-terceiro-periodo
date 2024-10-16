@@ -1,4 +1,4 @@
-package JOAO_VITOR_SOUZA.primeirob.aulas.aulasete;
+package primeirob.aulas.aulasete;
 
 public class StoneGateWay {
     public static void main(String[] args) {

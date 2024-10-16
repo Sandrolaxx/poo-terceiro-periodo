@@ -1,4 +1,4 @@
-package JOAO_VITOR_SOUZA.primeirob.aulas.aulaseis;
+package primeirob.aulas.aulaseis;
 
 import java.text.SimpleDateFormat;
 

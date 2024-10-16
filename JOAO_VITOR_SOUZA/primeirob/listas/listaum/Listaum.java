@@ -1,4 +1,4 @@
-package JOAO_VITOR_SOUZA.primeirob.listas.listaum;
+package primeirob.listas.listaum;
 
 import java.util.Scanner;
 
