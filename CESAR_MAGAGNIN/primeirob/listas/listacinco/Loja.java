@@ -1,4 +1,4 @@
-package CESAR_MAGAGNIN.primeirob.listas.listacinco;
+package primeirob.listas.listacinco;
 import java.util.ArrayList;
 
 public class Loja {

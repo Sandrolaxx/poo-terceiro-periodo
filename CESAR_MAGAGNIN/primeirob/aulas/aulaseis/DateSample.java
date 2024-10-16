@@ -1,4 +1,4 @@
-package CESAR_MAGAGNIN.primeirob.aulas.aulaseis;
+package primeirob.aulas.aulaseis;
 
 import java.util.Date;
 import java.text.SimpleDateFormat;

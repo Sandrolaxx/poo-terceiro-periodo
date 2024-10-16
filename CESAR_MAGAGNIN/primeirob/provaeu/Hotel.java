@@ -1,4 +1,4 @@
-package CESAR_MAGAGNIN.primeirob.prova;
+package primeirob.provaeu;
 
 import java.util.List;
 public class Hotel {

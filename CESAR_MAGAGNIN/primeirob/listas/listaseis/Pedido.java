@@ -1,5 +1,5 @@
 
-package CESAR_MAGAGNIN.primeirob.listas.listaseis;
+package primeirob.listas.listaseis;
 // Pedido.java
 
 import java.io.Serializable;

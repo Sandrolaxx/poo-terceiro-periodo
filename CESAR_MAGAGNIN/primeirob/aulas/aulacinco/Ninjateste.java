@@ -1,4 +1,4 @@
-package CESAR_MAGAGNIN.primeirob.aulas.aulacinco;
+package primeirob.aulas.aulacinco;
 
 public class Ninjateste {
     public static void main(String[]args){

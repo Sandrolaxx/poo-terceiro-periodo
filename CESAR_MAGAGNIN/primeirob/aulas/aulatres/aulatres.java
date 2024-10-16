@@ -1,4 +1,4 @@
-package CESAR_MAGAGNIN.primeirob.aulas.aulatres;
+package primeirob.aulas.aulatres;
 
 public class aulatres {
     public static void main (String [] args) {

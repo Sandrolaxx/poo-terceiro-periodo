@@ -1,4 +1,4 @@
-package CESAR_MAGAGNIN.primeirob.listas.listacinco;
+package primeirob.listas.listacinco;
 
 public class Cliente {
     String nome;
