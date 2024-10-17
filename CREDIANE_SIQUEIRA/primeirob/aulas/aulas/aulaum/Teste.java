@@ -1,4 +1,4 @@
-package CREDIANE_SIQUEIRA.primeirob.aulas.aulas.aulaum;
+package primeirob.aulas.aulas.aulaum;
 
 import java.util.Scanner;
 

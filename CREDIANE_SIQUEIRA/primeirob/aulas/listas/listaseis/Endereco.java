@@ -1,4 +1,4 @@
-package CREDIANE_SIQUEIRA.primeirob.aulas.listas.listaseis;
+package primeirob.aulas.listas.listaseis;
 
 public class Endereco {
     private String estado;

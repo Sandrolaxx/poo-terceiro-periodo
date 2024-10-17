@@ -1,18 +1,27 @@
-package CREDIANE_SIQUEIRA.primeirob.aulas.aulas.aulacinco;
+package primeirob.aulas.aulas.aulacinco;
 
 public class Professor {
+
     String nome;
+
     String materia;
+
+    Arma arma;
+
     boolean genteBoa;
+
     String qualificacao;
 
     public void apresentarse() {
-        String msg = ("Ola, meu nome e ")
-            .concat(nome)
-            .concat("e leciono")
-            .concat(materia);
-        //    .concat("e");
+        String msg = "Olá meu nome é "
+                .concat(nome)
+                .concat(" e leciono ")
+                .concat(materia)
+                .concat(" e ")
+                .concat(genteBoa ? "sou" : "não sou")
+                .concat(" gente boa.");
 
         System.out.println(msg);
     }
+
 }

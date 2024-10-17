@@ -1,4 +1,4 @@
-package CREDIANE_SIQUEIRA.primeirob.aulas.listas.listasete;
+package primeirob.aulas.listas.listasete;
 
 import java.util.Date;
 import java.util.List;

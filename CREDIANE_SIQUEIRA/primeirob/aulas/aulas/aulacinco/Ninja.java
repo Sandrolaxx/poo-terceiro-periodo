@@ -1,8 +1,8 @@
-package CREDIANE_SIQUEIRA.primeirob.aulas.aulas.aulacinco;
+package primeirob.aulas.aulas.aulacinco;
 
 public class Ninja {
-    
-    String nome;
+
+    String name;
 
     int idade;
 
@@ -15,9 +15,11 @@ public class Ninja {
     String nomeJutso;
 
     public void apresentarse() {
-        System.out.println("Ola meu nome e", nome + "da aldeia da" + aldeia);
+        System.out.println("Olá meu nome é " + name + " da aldeia da " + aldeia);
     }
+
     public void realizarJutso() {
-        System.out.println("Realizando jutso" + nomeJutso + "!!");
+        System.out.println("Realizando jutso " + nomeJutso + "!!");
     }
+
 }

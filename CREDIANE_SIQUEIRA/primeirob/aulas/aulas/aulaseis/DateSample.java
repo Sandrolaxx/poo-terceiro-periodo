@@ -1,17 +1,22 @@
-package CREDIANE_SIQUEIRA.primeirob.aulas.aulas.aulaseis;
+package primeirob.aulas.aulas.aulaseis;
+
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Date;
 
 public class DateSample {
+
     public static void main(String[] args) {
+
         Long diaEmMs = 86400000l;
         Date dataEpochMaisUmDia = new Date(diaEmMs);
         Date agora = new Date();
-        Date amanha = new Date(agora.getTime() + diaEmMs * 3);
+        Long msAtual = agora.getTime();
+
+        Date amanha = new Date(msAtual + (diaEmMs * 3));
+
         Date dataAleatoria = new Date(124, 9, 10);
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
 
         System.out.println(dataEpochMaisUmDia);
         System.out.println(agora);
@@ -20,4 +25,5 @@ public class DateSample {
 
         System.out.println(dateFormat.format(dataAleatoria));
     }
+
 }

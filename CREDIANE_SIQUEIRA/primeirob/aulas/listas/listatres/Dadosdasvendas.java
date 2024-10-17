@@ -1,3 +1,4 @@
+package primeirob.aulas.listas.listatres;
 import java.util.Scanner;
 
 public class Dadosdasvendas {

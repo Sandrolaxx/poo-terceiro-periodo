@@ -1,4 +1,4 @@
-package CREDIANE_SIQUEIRA.primeirob.aulas.listas.listacinco;
+package primeirob.aulas.listas.listacinco;
 
 public class Cliente {
     String nome;

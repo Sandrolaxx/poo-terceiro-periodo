@@ -1,4 +1,4 @@
-package CREDIANE_SIQUEIRA.primeirob.aulas.listas.listacinco;
+package primeirob.aulas.listas.listacinco;
 
 public class TestObjects {
     public static void main(String[] args) {
