@@ -59,7 +59,7 @@ public class Calculadora {
 
         } catch (NumberFormatException e) {
             try {
-                throw new ExcecaoPersonalizada("Erro: Entrada inválida. Digite números válidos.");
+                throw new ExcecaoPersonalizada("Entrada inválida: Poh! ta de brincadeira faz com números.");
             } catch (ExcecaoPersonalizada ex) {
                 System.out.println("Erro capturado: " + ex.getMessage());
             }
