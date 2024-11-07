@@ -26,7 +26,7 @@ public class HttpSample {
         Map<String, String> mapaJson = getChaveValor(jsonRespostaCotacao);
 
         JOptionPane.showMessageDialog(null,
-                mapaJson.get("bid"),
+                mapaJson.get("low"),
                 "Valor cotação moeda " + moeda, 0);
     }
 
@@ -46,7 +46,7 @@ public class HttpSample {
 
     public static Map<String, String> getChaveValor(String jsonBody) {
 
-        Pattern pattern = Pattern.compile("\\\"(\\w+)\\\":\\\"([^\\\"]+)\\\"");
+        Pattern pattern = Pattern.compile("\"(\\w+)\"\\s*:\\s*(\"[^\"]*\"|\\d+|true|false|null)");
         Matcher matcher = pattern.matcher(jsonBody);
 
         Map<String, String> mapaJson = new HashMap<>();
