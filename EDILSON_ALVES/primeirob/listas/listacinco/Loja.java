@@ -1,4 +1,4 @@
-package EDILSON_ALVES.primeirob.listas.listacinco;
+package primeirob.listas.listacinco;
 
 import java.util.ArrayList;
 

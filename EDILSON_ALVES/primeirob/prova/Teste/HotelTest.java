@@ -1,10 +1,10 @@
-package EDILSON_ALVES.primeirob.prova.Teste;
+package primeirob.prova.Teste;
 
 import java.util.Scanner;
 
-import EDILSON_ALVES.primeirob.prova.Dominio.Cliente;
+import primeirob.prova.Dominio.Cliente;
 
-import EDILSON_ALVES.primeirob.prova.Dominio.Quarto;
+import primeirob.prova.Dominio.Quarto;
 
 public class HotelTest {
     public static void main(String[] args) {
