@@ -19,7 +19,9 @@ public class Main {
                     break;
                 case 2:
                     System.out.println("recargar de valores");
-                    String comprovante = celcoin.realizarRecarga(53d);
+                    String valor = JOptionPane.showInputDialog(null,"Digite um valor valido","Digite um valor",JOptionPane.DEFAULT_OPTION);
+                    Double recarga = Double.parseDouble(valor);
+                    String comprovante = celcoin.realizarRecarga(recarga);
                     JOptionPane.showMessageDialog(null, comprovante,"opcao" , JOptionPane.DEFAULT_OPTION);
                     break;
                 case 3:
