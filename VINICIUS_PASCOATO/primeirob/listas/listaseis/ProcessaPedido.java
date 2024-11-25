@@ -1,4 +1,4 @@
-package VINICIUS_PASCOATO.primeirob.listas.listaseis;
+package primeirob.listas.listaseis;
 
 import java.util.Date;
 

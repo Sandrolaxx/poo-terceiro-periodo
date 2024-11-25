@@ -1,4 +1,4 @@
-package VINICIUS_PASCOATO.primeirob.listas.listacinco;
+package primeirob.listas.listacinco;
 
 public class Cliente {
     private String nome;

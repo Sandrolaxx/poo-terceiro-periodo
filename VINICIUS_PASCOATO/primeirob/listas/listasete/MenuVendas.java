@@ -1,4 +1,4 @@
-package VINICIUS_PASCOATO.primeirob.listas.listasete;
+package primeirob.listas.listasete;
 
 import java.util.ArrayList;
 import java.util.Scanner;

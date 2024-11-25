@@ -1,4 +1,4 @@
-package VINICIUS_PASCOATO.segundob.listas.listaum;
+package segundob.listas.listaum;
 
 import javax.swing.JOptionPane;
 

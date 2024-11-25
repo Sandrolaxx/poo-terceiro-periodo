@@ -1,4 +1,4 @@
-package VINICIUS_PASCOATO.primeirob.listas.listaum;
+package primeirob.listas.listaum;
 
 import java.util.Scanner;
 
