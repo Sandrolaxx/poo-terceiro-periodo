@@ -1,3 +1,3 @@
-public class IntegracaoAdquirente {
+public interface IntegracaoAdquirente {
     TransacaoCartao realizarTransacaoCartao(TransacaoCartao trx);
 }
