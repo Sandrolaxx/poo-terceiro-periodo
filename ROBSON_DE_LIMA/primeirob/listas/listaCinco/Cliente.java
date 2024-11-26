@@ -1,4 +1,4 @@
-package ROBSON_DE_LIMA.primeirob.listas.listaCinco;
+package primeirob.listas.listaCinco;
 public class Cliente {
     private String nome;
     private int idade;

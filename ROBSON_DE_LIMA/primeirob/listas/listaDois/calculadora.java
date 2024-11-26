@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Calculadora {
+public class calculadora {
     
     private static final double DESCONTO_ESPECIAL = 0.05;
     private static List<Venda> registroVendas = new ArrayList<>();

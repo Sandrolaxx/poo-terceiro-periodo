@@ -1,4 +1,4 @@
-package ROBSON_DE_LIMA.primeirob.listas.listaCinco;
+package primeirob.listas.listaCinco;
 public class TestObjects {
 
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package ROBSON_DE_LIMA.primeirob.aulas.auladois;
+package primeirob.aulas.auladois;
 
 public class EstruturaControle {
     public static void main(String[] args) {
