@@ -1,4 +1,4 @@
-package segundob.listaum;
+package segundob.listas.listaum;
 
 import javax.swing.JOptionPane;
 
