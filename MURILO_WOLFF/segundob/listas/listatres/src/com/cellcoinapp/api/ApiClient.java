@@ -75,10 +75,11 @@ public class ApiClient {
     }
 
     public static String extractJsonField(String json, String field) {
-        Pattern pattern = Pattern.compile("\"" + field + "\":\"([^\"]+)\"");
+        String regex = "\"" + field + "\":\\s*(\"[^\"]*\"|\\d+\\.\\d+|\\d+|true|false|null)";
+        Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(json);
         if (matcher.find()) {
-            return matcher.group(1);
+            return matcher.group(1).replaceAll("\"", "");
         }
         return null;
     }
