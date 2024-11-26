@@ -1,27 +1,29 @@
-package ISAQUI_CAMARGO_BARAI.segundob.aulas.auladois;
+package segundob.aulas.auladois;
 
 import java.util.List;
 
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class ExemploJOptionSelectBox {
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Exemplo JOptionPane - ShowInputDialog SelectOne");
-        List<String> melhoresProfes = List.of("Sandro", "Riuta", "Elenilds", "Andrade", "Elaine");
 
-        String melhorProfe = (String) JOptionPane.showInputDialog(frame,
-        "Qual é o seu professor favorito?",
-        "O melhor profe",
-        JOptionPane.QUESTION_MESSAGE,
-        null,
-        melhoresProfes.toArray(),
-        melhoresProfes.toArray()[0]);
+        List<String> melhoresProfes = List.of("Sandrolax", "Riuta", "Elenilds", "Elaine");
 
-        JOptionPane.showMessageDialog(frame, "Meu professor favorito é: " + melhorProfe);
+        String opcao = (String) JOptionPane.showInputDialog(
+                null,
+                "Selecione o melhor professor",
+                "Selecione opção",
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                melhoresProfes.toArray(),
+                melhoresProfes.toArray()[0]);
 
-        System.exit(0);
+        JOptionPane.showMessageDialog(null,
+                "O melhor profe é " + opcao,
+                opcao,
+                0);
+
     }
-    
+
 }
