@@ -1,4 +1,4 @@
-package CESAR_MAGAGNIN.primeirob.listas.listasete;
+package primeirob.listas.listasete;
 
 public class Vendedor extends Funcionario {
     private static final long serialVersionUID = 1L;

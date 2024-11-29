@@ -1,4 +1,4 @@
-package CESAR_MAGAGNIN.primeirob.listas.listaseis;
+package primeirob.listas.listaseis;
 
 public class Cliente extends Pessoa {
     private static final long serialVersionUID = 1L;

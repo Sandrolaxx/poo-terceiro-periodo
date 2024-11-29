@@ -1,5 +1,5 @@
 
-package CESAR_MAGAGNIN.primeirob.listas.listasete;
+package primeirob.listas.listasete;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

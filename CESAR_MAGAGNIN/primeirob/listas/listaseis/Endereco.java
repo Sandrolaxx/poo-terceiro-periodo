@@ -1,4 +1,4 @@
-package CESAR_MAGAGNIN.primeirob.listas.listaseis;
+package primeirob.listas.listaseis;
 
 import java.io.Serializable;
 
