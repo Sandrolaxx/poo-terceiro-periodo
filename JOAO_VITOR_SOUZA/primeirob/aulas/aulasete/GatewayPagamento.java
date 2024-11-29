@@ -1,8 +1,8 @@
-package JOAO_VITOR_SOUZA.primeirob.aulas.aulasete;
+package primeirob.aulas.aulasete;
 
 public class GatewayPagamento {
     public static void main(String[] args) {
         
-        stone
+        
     }
 }

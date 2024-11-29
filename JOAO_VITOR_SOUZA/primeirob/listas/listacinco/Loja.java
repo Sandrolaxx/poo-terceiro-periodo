@@ -1,4 +1,4 @@
-package JOAO_VITOR_SOUZA.primeirob.listas.listacinco;
+package primeirob.listas.listacinco;
 
 import java.util.List;
 

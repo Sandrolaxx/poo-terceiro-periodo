@@ -1,4 +1,4 @@
-package JOAO_VITOR_SOUZA.primeirob.aulas.aulacinco;
+package primeirob.aulas.aulacinco;
 
 public class TesteNinja {
     public static void main(String[] args) {
