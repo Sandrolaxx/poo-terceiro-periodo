@@ -1,4 +1,4 @@
-package listas.listaseis;
+package primeirob.listas.listaseis;
 
 public class Item {
     public int id;
