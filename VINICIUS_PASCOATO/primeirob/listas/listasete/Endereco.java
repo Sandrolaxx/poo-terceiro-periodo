@@ -1,4 +1,4 @@
-package VINICIUS_PASCOATO.primeirob.listas.listasete;
+package primeirob.listas.listasete;
 
 public class Endereco {
     private String rua;

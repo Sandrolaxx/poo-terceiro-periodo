@@ -1,4 +1,4 @@
-package VINICIUS_PASCOATO.primeirob.listas.listatres;
+package primeirob.listas.listatres;
 
 import java.util.ArrayList;
 import java.util.List;
