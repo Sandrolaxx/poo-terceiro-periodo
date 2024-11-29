@@ -37,40 +37,40 @@ public class Integracao {
     }
 
     public String consultarValores() throws Exception {
-        // Obtém o token de autenticação
+        
         Map<String, Object> json = JSonUtils.srtToMap(genToken());
         String token = json.get("access_token").toString();
 
-        // Definindo o providerId fixo (exemplo: 2134 para Google Play ou Steam)
+        
         int providerId = 2134;
 
-        // URL da API com o providerId fixo
+        
         HttpClient client = HttpClient.newHttpClient();
         URI uri = new URI("https://sandbox.openfinance.celcoin.dev/v5/transactions/topups/provider-values?providerId=" + providerId); 
 
-        // Requisição GET com o token de autenticação
+        
         HttpRequest request = HttpRequest.newBuilder(uri)
                 .header("Authorization", "Bearer " + token)
                 .GET()
                 .build();
 
-        // Enviando a requisição e recebendo a resposta
+        
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
         if (response.statusCode() != 200) {
             throw new Exception("Erro ao consultar valores: " + response.statusCode() + " - " + response.body());
         }
 
-        // Resposta da API
+        
         String responseBody = response.body();
 
-        // Concatenar providerId e statusCode
+        
         StringBuilder resultado = new StringBuilder();
         resultado.append("providerId: ").append(providerId).append("\n");
         resultado.append("StatusCode: ").append(response.statusCode()).append("\n");
 
-        // Aplicando o Regex para extrair valores específicos (ex: valores monetários)
-        String regex = "\"value\":\\s*(\\d+\\.\\d{2})"; // Regex para capturar valores monetários
+        
+        String regex = "\"value\":\\s*(\\d+\\.\\d{2})"; 
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(responseBody);
 
@@ -79,7 +79,7 @@ public class Integracao {
         }
 
         if (resultado.length() > 0) {
-            // Exibir as informações completas no JOptionPane
+            
             return resultado.toString();
         } else {
             return "Nenhum valor encontrado.";
