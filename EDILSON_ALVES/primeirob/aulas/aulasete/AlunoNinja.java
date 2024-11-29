@@ -1,4 +1,4 @@
-package EDILSON_ALVES.primeirob.aulas.aulasete;
+package primeirob.aulas.aulasete;
 
 public class AlunoNinja extends Ninja {
    public String nomeTime;

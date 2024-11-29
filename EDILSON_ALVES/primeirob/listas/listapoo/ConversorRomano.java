@@ -1,4 +1,4 @@
-package EDILSON_ALVES.primeirob.listas.listapoo;
+package primeirob.listas.listapoo;
 
 public class ConversorRomano {
     

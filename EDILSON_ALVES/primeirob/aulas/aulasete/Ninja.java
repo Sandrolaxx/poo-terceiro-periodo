@@ -1,4 +1,4 @@
-package EDILSON_ALVES.primeirob.aulas.aulasete;
+package primeirob.aulas.aulasete;
 
 public abstract class Ninja {
     String nome;

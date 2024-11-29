@@ -1,4 +1,4 @@
-package EDILSON_ALVES.primeirob.prova.Dominio;
+package primeirob.prova.Dominio;
 
 public class Quarto {
     private int numeroQuarto;

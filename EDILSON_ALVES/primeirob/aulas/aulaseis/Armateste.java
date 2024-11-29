@@ -1,4 +1,4 @@
-package EDILSON_ALVES.primeirob.aulas.aulaseis;
+package primeirob.aulas.aulaseis;
 
 
 

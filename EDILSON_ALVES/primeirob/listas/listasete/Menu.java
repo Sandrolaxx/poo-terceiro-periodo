@@ -1,4 +1,4 @@
-package EDILSON_ALVES.primeirob.listas.listasete;
+package primeirob.listas.listasete;
 
 import java.util.Scanner;
 

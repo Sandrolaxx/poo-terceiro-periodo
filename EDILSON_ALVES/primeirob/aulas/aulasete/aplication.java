@@ -1,4 +1,4 @@
-package EDILSON_ALVES.primeirob.aulas.aulasete;
+package primeirob.aulas.aulasete;
 
 import java.util.Date;
 import java.text.SimpleDateFormat;

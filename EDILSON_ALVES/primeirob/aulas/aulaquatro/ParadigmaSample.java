@@ -1,5 +1,4 @@
-package EDILSON_ALVES.primeirob.aulas.aulaquatro;
-
+package primeirob.aulas.aulaquatro;
 import java.util.ArrayList;
 import java.util.List;
 

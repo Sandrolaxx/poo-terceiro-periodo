@@ -1,4 +1,4 @@
-package EDILSON_ALVES.primeirob.aulas;
+package primeirob.aulas;
 
  class aulatres{
     public static void main(String [] args){
