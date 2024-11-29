@@ -1,4 +1,4 @@
-package ROBSON_DE_LIMA.primeirob.aulas.aulatres;
+package primeirob.aulas.aulatres;
 
 public class matriz {
     public static void main(String[] args) {

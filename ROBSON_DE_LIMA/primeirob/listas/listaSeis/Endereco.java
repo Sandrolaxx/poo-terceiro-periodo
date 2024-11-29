@@ -1,4 +1,4 @@
-package ROBSON_DE_LIMA.primeirob.listas.listaSeis;
+package primeirob.listas.listaSeis;
 
 public class Endereco {
     private String estado;

@@ -1,4 +1,4 @@
-package ROBSON_DE_LIMA.primeirob.aulas.aulaCinco;
+package primeirob.aulas.aulaCinco;
 
 public class Arma {
     String tipo;

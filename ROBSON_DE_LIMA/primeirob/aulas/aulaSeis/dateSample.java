@@ -1,4 +1,4 @@
-package ROBSON_DE_LIMA.primeirob.aulas.aulaSeis;
+package primeirob.aulas.aulaSeis;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 public class dateSample {

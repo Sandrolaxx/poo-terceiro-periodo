@@ -1,4 +1,4 @@
-package ROBSON_DE_LIMA.primeirob.aulas.aulaSete;
+package primeirob.aulas.aulaSete;
 
 public class Ninja {
     public Ninja(){
